@@ -29,7 +29,7 @@ const rows: ClassifyInput[] = loadFixture(currency).transactions.map((t) => {
   };
 }).filter((r) => !existing.items[r.id]);
 
-const BATCH = 120;
+const BATCH = 60;
 let model = existing.model;
 for (let i = 0; i < rows.length; i += BATCH) {
   const batch = rows.slice(i, i + BATCH);

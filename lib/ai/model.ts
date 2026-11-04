@@ -69,6 +69,7 @@ function statusOf(error: unknown): number | undefined {
 /** Run `fn` against the first model that will answer. Throws AiUnavailableError when none will. */
 export async function withModel<T>(fn: (model: LanguageModel, id: string) => Promise<T>): Promise<{ value: T; model: string }> {
   if (!hasAiKey()) throw new AiUnavailableError('No Gemini key configured', 'no_key');
+  if (process.env.AI_OFFLINE === '1') throw new AiUnavailableError('AI_OFFLINE=1 set', 'no_key');
   if (!takeRateToken()) throw new AiUnavailableError('Local rate limit reached (free tier protection)', 'rate_limited');
   let lastError: unknown;
   for (const id of modelIds()) {

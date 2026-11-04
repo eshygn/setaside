@@ -34,14 +34,15 @@
   --sa-display: var(--font-display), Georgia, serif;
   --sa-mono: var(--font-mono), ui-monospace, monospace;
 
+  /* Chart series follow the category colours where they can: sales, client work, reimbursements, personal… */
   --sa-chart-1: #1d5c45;
-  --sa-chart-2: #e8a33d;
-  --sa-chart-3: #3c7ea8;
-  --sa-chart-4: #c0533a;
-  --sa-chart-5: #9a7fb8;
-  --sa-chart-6: #6fae8f;
+  --sa-chart-2: #3c7ea8;
+  --sa-chart-3: #9a7fb8;
+  --sa-chart-4: #b3aea2;
+  --sa-chart-5: #e8a33d;
+  --sa-chart-6: #c0533a;
   --sa-chart-7: #a2682a;
-  --sa-chart-8: #8c8a83;
+  --sa-chart-8: #6fae8f;
   --sa-chart-9: #2f4a3f;
   --sa-chart-10: #d9c58f;
 }
