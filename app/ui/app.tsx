@@ -124,7 +124,7 @@ export function SetAsideApp(props: { initial: Snapshot; licenseKey?: string; aiK
   return (
     <div className="flex min-h-screen flex-col">
       {/* ── Top bar ───────────────────────────────────────────── */}
-      <header className="sticky top-0 z-30 border-b border-sa-line bg-sa-paper/95 backdrop-blur">
+      <header className="z-30 border-b md:sticky md:top-0 border-sa-line bg-sa-paper/95 backdrop-blur">
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-5 gap-y-2 px-4 py-2.5 md:px-6">
           <Logo />
           <div className="hidden min-w-0 flex-col leading-tight lg:flex">
