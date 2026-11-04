@@ -205,7 +205,18 @@ export function SetAsideApp(props: { initial: Snapshot; licenseKey?: string; aiK
         <section className="min-h-[560px] flex-1">
           {tab === 'review' && <ReviewGrid snap={snap} licenseKey={props.licenseKey} flash={flash} onCorrected={onCorrected} onChanged={refresh} classifying={!!classifying} />}
           {tab === 'dashboard' && <Dashboard snap={snap} licenseKey={props.licenseKey} aiKeyConfigured={props.aiKeyConfigured} onScenario={refresh} />}
-          {tab === 'invoices' && <Invoices snap={snap} onChanged={refresh} toast={toast} paypalClientId={props.paypalClientId} />}
+          {tab === 'invoices' && (
+            <Invoices
+              snap={snap}
+              onChanged={refresh}
+              onPaid={async () => {
+                await refresh();
+                await classifyAll();
+              }}
+              toast={toast}
+              paypalClientId={props.paypalClientId}
+            />
+          )}
           {tab === 'assumptions' && <Assumptions snap={snap} onChanged={refresh} />}
         </section>
 
