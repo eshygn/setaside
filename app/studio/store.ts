@@ -36,3 +36,13 @@ export function useTaxContext(): TaxContext | null {
     () => null,
   );
 }
+
+// The latest SetAside snapshot, for the agent's tools (they run outside React).
+let snapshot: import('@/lib/service').Snapshot | null = null;
+export const setLatestSnapshot = (s: import('@/lib/service').Snapshot) => {
+  snapshot = s;
+};
+export const latestSnapshot = () => {
+  if (!snapshot) throw new Error('SetAside data not loaded yet');
+  return snapshot;
+};

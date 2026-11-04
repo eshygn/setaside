@@ -159,7 +159,7 @@ function recorded(key: string): Recording | undefined {
 export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
   if (process.env.AGENT_DEBUG === '1') fs.writeFileSync(path.join(process.cwd(), 'data', 'agent-last-request.json'), JSON.stringify(req, null, 1));
   const id = `turn-${crypto.randomUUID().slice(0, 12)}`;
-  const { question, round, key } = turnKey(req.input);
+  const { question, key } = turnKey(req.input);
   const db = getDb();
   const sig = db.prepare('SELECT value FROM ai_cache WHERE key = ?');
   const { system, messages } = toModelMessages(req.input, (callId) => (sig.get(`sig:${callId}`) as { value: string } | undefined)?.value);

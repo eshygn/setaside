@@ -60,17 +60,17 @@ export function DeadlineStripWidget({ dataMapping, widgetApi, format }: AgWidget
   const pos = (d: string) => `${Math.max(0, Math.min(100, (daysBetween(start, d) / span) * 100))}%`;
 
   // Cumulative set-aside at each quarter end, then the difference: what each quarter added.
-  let running: MoneySums = { profit: 0, fees: 0, income: 0, incomeFees: 0 };
-  let previousTax = 0;
-  const quarters = preset.quarters.map((q) => {
-    const s = byQuarter.get(q.label) ?? { profit: 0, fees: 0, income: 0, incomeFees: 0 };
-    running = { profit: running.profit + s.profit, fees: running.fees + s.fees, income: running.income + s.income, incomeFees: running.incomeFees + s.incomeFees };
-    const cumulative = q.start > clock ? previousTax : taxFor(ctx, running, uplift).total;
-    const added = cumulative - previousTax;
-    previousTax = cumulative;
-    const status = q.end < clock ? 'closed' : q.start <= clock ? 'current' : 'upcoming';
-    return { ...q, profit: s.profit, added, cumulative, status };
-  });
+  const zero: MoneySums = { profit: 0, fees: 0, income: 0, incomeFees: 0 };
+  const quarters = preset.quarters.reduce<{ list: Quarter[]; running: MoneySums; tax: number }>(
+    (acc, q) => {
+      const s = byQuarter.get(q.label) ?? zero;
+      const running = { profit: acc.running.profit + s.profit, fees: acc.running.fees + s.fees, income: acc.running.income + s.income, incomeFees: acc.running.incomeFees + s.incomeFees };
+      const cumulative = q.start > clock ? acc.tax : taxFor(ctx, running, uplift).total;
+      const status: Quarter['status'] = q.end < clock ? 'closed' : q.start <= clock ? 'current' : 'upcoming';
+      return { list: [...acc.list, { ...q, profit: s.profit, added: cumulative - acc.tax, cumulative, status }], running, tax: cumulative };
+    },
+    { list: [], running: zero, tax: 0 },
+  ).list;
   const next = preset.deadlines.find((d) => d.date >= clock);
 
   return (
@@ -128,4 +128,6 @@ export function DeadlineStripWidget({ dataMapping, widgetApi, format }: AgWidget
 }
 
 const shortDate = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+type Quarter = { id: string; label: string; start: string; end: string; profit: number; added: number; cumulative: number; status: 'closed' | 'current' | 'upcoming' };
+
 const formatLong = (d: string) => new Date(`${d}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
