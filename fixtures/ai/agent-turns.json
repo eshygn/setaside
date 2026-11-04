@@ -1,21 +1,4 @@
 {
- "f06d4ff65cc8056c:0": {
-  "question": "Show refunds against sales by month.",
-  "text": "",
-  "toolCalls": [
-   {
-    "name": "build_chart",
-    "arguments": "{\"groupBy\":\"calendar::month\",\"values\":[\"transactions.sales\",\"transactions.refunds\"],\"title\":\"Refunds vs Sales by Month\",\"type\":\"column-chart-grouped\"}"
-   }
-  ],
-  "model": "gemini-3.5-flash-lite"
- },
- "f06d4ff65cc8056c:1": {
-  "question": "Show refunds against sales by month.",
-  "text": "Here are your sales and refunds grouped by month. Across the period shown, total sales reached £14,344.00 against £828.25 in refunds. \n\n*Note: These figures are estimates. SetAside gives rough estimates to help you put money aside; it is not tax advice, and your real bill depends on things SetAside can’t see.*",
-  "toolCalls": [],
-  "model": "gemini-flash-lite-latest"
- },
  "da312b5717a4bac3:0": {
   "question": "What if I’d charged 10% more?",
   "text": "",
@@ -66,15 +49,43 @@
   "text": "",
   "toolCalls": [
    {
-    "name": "build_chart",
-    "arguments": "{\"groupBy\":\"transactions.counterparty\",\"title\":\"Client Payments by Counterparty (This Tax Year)\",\"values\":[\"transactions.clientPayments\"],\"type\":\"bar-chart-grouped\"}"
+    "name": "query_totals",
+    "arguments": "{\"value\":\"transactions.clientPayments\",\"groupBy\":\"counterparty\",\"top\":5}"
    }
   ],
   "model": "gemini-3.5-flash-lite"
  },
  "d00ae1c979b35a95:1": {
   "question": "Which clients paid me the most this tax year?",
-  "text": "Apex Web Solutions paid you the most this tax year with £7,200.00, followed by DesignCraft (£3,500.00) and Studio Nine (£1,490.00), totaling £12,190.00 across all clients.",
+  "text": "",
+  "toolCalls": [
+   {
+    "name": "build_chart",
+    "arguments": "{\"type\":\"bar-chart-grouped\",\"groupBy\":\"transactions.counterparty\",\"values\":[\"transactions.clientPayments\"],\"title\":\"Client Payments by Counterparty\"}"
+   }
+  ],
+  "model": "gemini-3.5-flash-lite"
+ },
+ "d00ae1c979b35a95:2": {
+  "question": "Which clients paid me the most this tax year?",
+  "text": "Hollis & Vane Architects paid you the most this tax year at £3,800.00, followed by Brightwater Dental at £3,150.00 and Pixel & Pine Agency at £2,370.00. I've added a chart to the top of your page showing the breakdown.",
+  "toolCalls": [],
+  "model": "gemini-3.5-flash-lite"
+ },
+ "f06d4ff65cc8056c:0": {
+  "question": "Show refunds against sales by month.",
+  "text": "",
+  "toolCalls": [
+   {
+    "name": "build_chart",
+    "arguments": "{\"groupBy\":\"calendar::month\",\"type\":\"column-chart-grouped\",\"values\":[\"transactions.sales\",\"transactions.refunds\"],\"title\":\"Refunds against Sales by Month\"}"
+   }
+  ],
+  "model": "gemini-3.5-flash-lite"
+ },
+ "f06d4ff65cc8056c:1": {
+  "question": "Show refunds against sales by month.",
+  "text": "Here are your monthly sales against refunds. Total sales stand at £14,344.00 and total refunds at £828.25 across the period.",
   "toolCalls": [],
   "model": "gemini-3.5-flash-lite"
  }

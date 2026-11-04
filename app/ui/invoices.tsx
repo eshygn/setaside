@@ -11,7 +11,7 @@ import { Money } from './bits';
 import { formatDay } from './format';
 import { PayPalCheckout } from './paypal-checkout';
 
-export function Invoices({ snap, onChanged, toast, paypalClientId }: { snap: Snapshot; onChanged: () => void; toast: (t: Omit<Toast, 'id'>) => void; paypalClientId?: string }) {
+export function Invoices({ snap, onChanged, onPaid, toast, paypalClientId }: { snap: Snapshot; onChanged: () => void; onPaid: () => void; toast: (t: Omit<Toast, 'id'>) => void; paypalClientId?: string }) {
   const cur = snap.preset.currency;
   const missing = snap.rows.filter((r) => r.invoiceState === 'missing');
   const [working, setWorking] = useState<string | null>(null);
@@ -88,7 +88,7 @@ export function Invoices({ snap, onChanged, toast, paypalClientId }: { snap: Sna
       </div>
 
       <div className="flex flex-col gap-4">
-        <PayPalCheckout clientId={paypalClientId} currency={cur} onPaid={onChanged} toast={toast} />
+        <PayPalCheckout clientId={paypalClientId} currency={cur} onPaid={onPaid} toast={toast} />
         <div className="rounded-2xl border border-sa-line bg-sa-surface">
           <div className="border-b border-sa-line-soft px-5 py-3">
             <h3 className="text-[15px] font-semibold text-sa-ink">Invoices on file</h3>

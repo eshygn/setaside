@@ -4,7 +4,7 @@
 // We read the SDK's raw JSON `body` rather than its camelCased `result`, so live and mock data
 // share one shape: PayPal's documented snake_case.
 
-import { Client, Environment, TransactionSearchController } from '@paypal/paypal-server-sdk';
+import { CheckoutPaymentIntent, Client, Environment, OrdersController, PaymentsController, TransactionSearchController } from '@paypal/paypal-server-sdk';
 import { toDecimalString } from '../money';
 import {
   PayPalError,
@@ -31,6 +31,8 @@ export const searchDate = (d: Date) => `${d.toISOString().slice(0, 19)}Z`;
 export class LivePayPal implements PayPalAdapter {
   readonly mode = 'live' as const;
   private readonly search: TransactionSearchController;
+  private readonly orders: OrdersController;
+  private readonly payments: PaymentsController;
   private token?: { value: string; expiresAt: number };
 
   constructor() {
@@ -40,6 +42,38 @@ export class LivePayPal implements PayPalAdapter {
       timeout: 20_000,
     });
     this.search = new TransactionSearchController(client);
+    this.orders = new OrdersController(client);
+    this.payments = new PaymentsController(client);
+  }
+
+  // --- Orders: the PayPal JS SDK buttons create and capture through these ----------------
+
+  async createOrder(params: { amountMinor: number; currency: string; description: string; invoiceId?: string }) {
+    const res = await this.orders.createOrder({
+      body: {
+        intent: CheckoutPaymentIntent.Capture,
+        purchaseUnits: [
+          {
+            amount: { currencyCode: params.currency, value: toDecimalString(params.amountMinor) },
+            description: params.description,
+            ...(params.invoiceId && { invoiceId: params.invoiceId }),
+          },
+        ],
+      },
+      prefer: 'return=minimal',
+    });
+    return JSON.parse(String(res.body)) as { id: string; status: string };
+  }
+
+  async captureOrder(orderId: string) {
+    const res = await this.orders.captureOrder({ id: orderId, prefer: 'return=representation' });
+    return JSON.parse(String(res.body)) as CapturedOrder;
+  }
+
+  /** Payments v2: one capture, by its id (the same id Transaction Search reports). */
+  async getCapture(captureId: string) {
+    const res = await this.payments.getCapturedPayment({ captureId });
+    return JSON.parse(String(res.body)) as PayPalCapture;
   }
 
   async searchTransactions({ start, end, page, pageSize }: { start: Date; end: Date; page: number; pageSize: number }) {
@@ -142,3 +176,21 @@ export class LivePayPal implements PayPalAdapter {
     }
   }
 }
+
+export type PayPalCapture = {
+  id: string;
+  status: string;
+  status_details?: { reason?: string };
+  amount: { currency_code: string; value: string };
+  seller_receivable_breakdown?: { gross_amount?: { value: string }; paypal_fee?: { value: string; currency_code: string }; net_amount?: { value: string } };
+  invoice_id?: string;
+  create_time?: string;
+  payee?: { email_address?: string; merchant_id?: string };
+};
+
+export type CapturedOrder = {
+  id: string;
+  status: string;
+  payer?: { email_address?: string; name?: { given_name?: string; surname?: string }; payer_id?: string };
+  purchase_units?: { description?: string; payments?: { captures?: PayPalCapture[] } }[];
+};

@@ -126,7 +126,17 @@ export function buildAgent(deps: Deps): AgAiHarnessSetup {
           }),
         execute: async (args: ChartSpec, ctx) => {
           const id = addChartWidget(api, args);
-          return ctx.success(JSON.stringify({ widgetId: id, placedAt: 'top of the page', totals: totalsFor(deps.snapshot(), args.values) }));
+          const snap = deps.snapshot();
+          const by = GROUP_TO_QUERY[args.groupBy];
+          return ctx.success(
+            JSON.stringify({
+              widgetId: id,
+              placedAt: 'top of the page',
+              totals: totalsFor(snap, args.values),
+              // What the chart shows, so the answer quotes real names and numbers.
+              breakdown: Object.fromEntries(args.values.map((v) => [v, groupTotals(snap, by, v, 6)])),
+            }),
+          );
         },
       });
 
@@ -193,7 +203,7 @@ How to work:
 - To show something, call build_chart once (e.g. refunds against sales by month: type column-chart-grouped, groupBy calendar::month, values [transactions.sales, transactions.refunds]). To change a chart, call edit_chart. Don't call view_page first unless you need a widget id.
 - For numbers, call query_totals. For tax questions call get_tax_position; never compute tax yourself. For price what-ifs call set_price_what_if (it updates the tax widgets live).
 - For SetAside's own widgets (tax pot, deadline strip, income by category) use add_setaside_widget.
-- Call tools straight away, then finish with a short answer quoting the numbers the tools returned.
+- Call tools straight away, then finish with a short answer. Only quote names and numbers that a tool returned; never invent clients, amounts or dates.
 - When you give a tax figure, add once, briefly, that it is an estimate and not tax advice. Don't add it to answers that aren't about tax.`;
 }
 
@@ -265,6 +275,14 @@ const VALUE_FIELDS = [
   'transactions.moneyIn',
   'transactions.amount',
 ] as const;
+
+const GROUP_TO_QUERY: Record<(typeof GROUP_FIELDS)[number], 'month' | 'category' | 'counterparty' | 'taxQuarter'> = {
+  'calendar::month': 'month',
+  'calendar::quarter': 'taxQuarter',
+  'transactions.category': 'category',
+  'transactions.counterparty': 'counterparty',
+  'transactions.taxQuarter': 'taxQuarter',
+};
 
 type ChartSpec = { type: (typeof CHART_TYPES)[number]; title: string; groupBy: (typeof GROUP_FIELDS)[number]; values: (typeof VALUE_FIELDS)[number][] };
 

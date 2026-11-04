@@ -8,7 +8,7 @@ import { aiStatus, setAiStatus, type AiStatus } from './ai/model';
 import { isCategory, type Category } from './categories';
 import { getDb, kvGet, kvSet, wipe } from './db';
 import { initialInvoiceState, invoiceTransition, type InvoiceFlowState } from './invoice-flow';
-import { parseMinor, type Currency } from './money';
+import { parseMinor, toDecimalString, type Currency } from './money';
 import { liveAdapter, liveHealth, mockAdapter, withTimeout } from './paypal';
 import { fetchRange } from './paypal/sync';
 import type { PayPalInvoice, PayPalTransactionDetail } from './paypal/types';
@@ -518,4 +518,52 @@ function storeInvoice(stmt: { run: (...args: unknown[]) => unknown }, inv: PayPa
     origin,
     JSON.stringify(inv),
   );
+}
+
+// --- PayPal Checkout (JS SDK buttons) -------------------------------------------------------------
+
+export type CheckoutRecord = { txId: string; mode: 'live' | 'mock'; status: string; amount: number; currency: string; payer: string; note: string };
+
+/**
+ * Record a payment captured through the PayPal buttons straight away. Transaction Search only
+ * shows new activity after up to three hours, so the row goes in now from the capture response,
+ * shaped like a Transaction Search item, and the next sync replaces it with PayPal's own copy
+ * (same id).
+ */
+export function recordCheckout(c: {
+  captureId: string;
+  amountMinor: number;
+  feeMinor: number;
+  currency: string;
+  payerName: string;
+  payerEmail?: string;
+  description: string;
+  createdAt: string;
+  status: string;
+  mode: 'live' | 'mock';
+}): CheckoutRecord {
+  const detail: PayPalTransactionDetail = {
+    transaction_info: {
+      transaction_id: c.captureId,
+      transaction_event_code: 'T0006',
+      transaction_initiation_date: `${c.createdAt.slice(0, 19)}+0000`,
+      transaction_updated_date: `${c.createdAt.slice(0, 19)}+0000`,
+      transaction_amount: { currency_code: c.currency, value: toDecimalString(c.amountMinor) },
+      ...(c.feeMinor ? { fee_amount: { currency_code: c.currency, value: toDecimalString(-Math.abs(c.feeMinor)) } } : {}),
+      transaction_status: c.status === 'COMPLETED' ? 'S' : 'P',
+      transaction_subject: c.description,
+      transaction_note: c.mode === 'live' ? 'Paid with PayPal Checkout (not yet in Transaction Search)' : 'Paid with PayPal Checkout (mock)',
+    },
+    payer_info: { email_address: c.payerEmail, payer_name: { alternate_full_name: c.payerName } },
+  };
+  const row = toRow(detail, 'sandbox');
+  // The demo clock may be behind or ahead of real time; date the row on the clock so it shows.
+  const clock = settings().clock;
+  row.date = clock;
+  row.datetime = `${clock}T${c.createdAt.slice(11, 19) || '12:00:00'}Z`;
+  getDb()
+    .prepare(`INSERT OR REPLACE INTO tx (id, datetime, date, event_code, status, amount_minor, fee_minor, currency, payer_name, payer_email, subject, note, invoice_id, balance_minor, origin, raw)
+      VALUES (@id, @datetime, @date, @event_code, @status, @amount_minor, @fee_minor, @currency, @payer_name, @payer_email, @subject, @note, @invoice_id, @balance_minor, @origin, @raw)`)
+    .run(row);
+  return { txId: c.captureId, mode: c.mode, status: c.status, amount: c.amountMinor, currency: c.currency, payer: c.payerName, note: row.note ?? '' };
 }
