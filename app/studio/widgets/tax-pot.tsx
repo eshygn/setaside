@@ -56,11 +56,13 @@ export function TaxPotWidget({ dataMapping, widgetApi, format }: AgWidgetParams<
   const m = (v: number) => formatMoney(v, cur);
 
   return (
-    <div className="flex h-full items-center gap-5 px-3 pb-2">
-      <Jar ratio={ratio} whatIf={whatIfRatio} label={`${Math.round(ratio * 100)}%`} />
+    <div className="@container flex h-full items-start gap-5 overflow-hidden px-3 pb-2 pt-1 @[360px]:items-center">
+      <div className="hidden h-full items-center @[360px]:flex">
+        <Jar ratio={ratio} whatIf={whatIfRatio} label={`${Math.round(ratio * 100)}%`} />
+      </div>
       <div className="min-w-0 flex-1">
         <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sa-muted">Put aside</div>
-        <div className="display num text-[clamp(26px,3.2vw,40px)] font-semibold leading-tight text-sa-ink">{m(est.total)}</div>
+        <div className="display num text-[28px] font-semibold leading-tight text-sa-ink @[460px]:text-[40px]">{m(est.total)}</div>
         <div className="mt-1 text-[12px] text-sa-muted">
           of <span className="num font-medium text-sa-ink-2">{m(ctx.balance)}</span> in PayPal ·{' '}
           <span className={`num font-semibold ${safe < 0 ? 'text-sa-clay' : 'text-sa-forest'}`}>{m(safe)}</span> safe to spend

@@ -81,6 +81,7 @@ export async function withModel<T>(fn: (model: LanguageModel, id: string) => Pro
       lastError = error;
       const status = statusOf(error);
       if (status === 429) coolingUntil.set(id, Date.now() + 10 * 60_000);
+      console.error(`[ai] ${id} failed (${status ?? 'no status'}): ${error instanceof Error ? error.message.slice(0, 300) : error}`);
       if (status === 429 || status === 503 || status === 500 || status === 404) continue;
       throw new AiUnavailableError(error instanceof Error ? error.message : String(error), 'error');
     }

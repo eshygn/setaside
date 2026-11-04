@@ -74,9 +74,9 @@ export function DeadlineStripWidget({ dataMapping, widgetApi, format }: AgWidget
   const next = preset.deadlines.find((d) => d.date >= clock);
 
   return (
-    <div className="flex h-full flex-col gap-3 px-3 pb-2">
+    <div className="@container flex h-full flex-col gap-3 px-3 pb-2">
       {/* Timeline */}
-      <div className="relative mt-5 h-9">
+      <div className="relative mt-6 h-12 shrink-0">
         <div className="absolute inset-x-0 top-4 h-1.5 rounded-full bg-sa-paper-2" />
         <div className="absolute left-0 top-4 h-1.5 rounded-full bg-sa-forest" style={{ width: pos(clock) }} />
         {preset.quarters.map((q) => (
@@ -97,7 +97,7 @@ export function DeadlineStripWidget({ dataMapping, widgetApi, format }: AgWidget
       </div>
 
       {/* Quarters */}
-      <div className="mt-3 grid flex-1 grid-cols-4 gap-2">
+      <div className="grid flex-1 grid-cols-2 gap-2 @[640px]:grid-cols-4">
         {quarters.map((q) => (
           <div
             key={q.id}
@@ -107,7 +107,7 @@ export function DeadlineStripWidget({ dataMapping, widgetApi, format }: AgWidget
               <span>{q.label}</span>
               <span>{q.status === 'current' ? 'now' : q.status === 'closed' ? '✓' : ''}</span>
             </div>
-            <div className="display num text-[20px] font-semibold text-sa-ink">{q.status === 'upcoming' ? '—' : formatMoney(q.added, cur, { whole: true })}</div>
+            <div className="display num text-[17px] font-semibold text-sa-ink @[640px]:text-[20px]">{q.status === 'upcoming' ? '—' : formatMoney(q.added, cur, { whole: true })}</div>
             <div className="num text-[11px] text-sa-muted">{q.status === 'upcoming' ? 'not started' : `to put aside · profit ${formatMoney(q.profit, cur, { whole: true })}`}</div>
           </div>
         ))}
