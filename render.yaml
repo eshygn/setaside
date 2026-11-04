@@ -1,0 +1,28 @@
+# Render Blueprint: one free web service. SQLite lives on the instance's disk and is re-seeded on
+# boot, which is what demo mode wants. The free plan sleeps when idle and takes about a minute to
+# wake on the first request.
+services:
+  - type: web
+    name: setaside
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/snapshot
+    envVars:
+      - key: NODE_VERSION
+        value: 22.21.0
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: PAYPAL_SANDBOX_BUYER_EMAIL
+        sync: false
+      - key: GOOGLE_GENERATIVE_AI_API_KEY
+        sync: false
+      - key: AI_MODEL
+        sync: false
+      - key: AG_GRID_LICENSE_KEY
+        sync: false
