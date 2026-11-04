@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/*
+ * SetAside design tokens: the one source for the shell (Tailwind classes such as bg-sa-paper),
+ * the review grid's AG Grid theme and the AG Studio theme (app/studio/theme.ts).
+ * Palette: ink-green and paper, a marigold "pot" accent, clay for warnings.
+ */
+:root {
+  --sa-ink: #12261e;
+  --sa-ink-2: #2f4a3f;
+  --sa-muted: #5f7068;
+  --sa-paper: #f5f1e8;
+  --sa-paper-2: #ece6d8;
+  --sa-surface: #fffdf8;
+  --sa-line: #ddd5c4;
+  --sa-line-soft: #ebe5d7;
+  --sa-forest: #1d5c45;
+  --sa-forest-2: #2b7a5d;
+  --sa-mint: #d8eee3;
+  --sa-marigold: #e8a33d;
+  --sa-marigold-soft: #fbe9c8;
+  --sa-clay: #c0533a;
+  --sa-clay-soft: #f6ddd5;
+  --sa-sky: #3c7ea8;
+
+  --sa-cat-sale: #1d5c45;
+  --sa-cat-client: #3c7ea8;
+  --sa-cat-refund: #c0533a;
+  --sa-cat-fee: #a2682a;
+  --sa-cat-personal: #8c8a83;
+  --sa-cat-reimb: #9a7fb8;
+
+  --sa-font: var(--font-sans), "Helvetica Neue", Arial, sans-serif;
+  --sa-display: var(--font-display), Georgia, serif;
+  --sa-mono: var(--font-mono), ui-monospace, monospace;
+
+  --sa-chart-1: #1d5c45;
+  --sa-chart-2: #e8a33d;
+  --sa-chart-3: #3c7ea8;
+  --sa-chart-4: #c0533a;
+  --sa-chart-5: #9a7fb8;
+  --sa-chart-6: #6fae8f;
+  --sa-chart-7: #a2682a;
+  --sa-chart-8: #8c8a83;
+  --sa-chart-9: #2f4a3f;
+  --sa-chart-10: #d9c58f;
+}
+
+@theme inline {
+  --color-sa-ink: var(--sa-ink);
+  --color-sa-ink-2: var(--sa-ink-2);
+  --color-sa-muted: var(--sa-muted);
+  --color-sa-paper: var(--sa-paper);
+  --color-sa-paper-2: var(--sa-paper-2);
+  --color-sa-surface: var(--sa-surface);
+  --color-sa-line: var(--sa-line);
+  --color-sa-line-soft: var(--sa-line-soft);
+  --color-sa-forest: var(--sa-forest);
+  --color-sa-forest-2: var(--sa-forest-2);
+  --color-sa-mint: var(--sa-mint);
+  --color-sa-marigold: var(--sa-marigold);
+  --color-sa-marigold-soft: var(--sa-marigold-soft);
+  --color-sa-clay: var(--sa-clay);
+  --color-sa-clay-soft: var(--sa-clay-soft);
+  --color-sa-sky: var(--sa-sky);
+  --font-display: var(--sa-display);
+  --font-sans: var(--sa-font);
+  --font-mono: var(--sa-mono);
+}
+
+html,
+body {
+  background: var(--sa-paper);
+  color: var(--sa-ink);
+  font-family: var(--sa-font);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.display {
+  font-family: var(--sa-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+/* Rows a rule just changed glow marigold for a moment. */
+@keyframes sa-ruleflash {
+  0% { background-color: var(--sa-marigold-soft); }
+  100% { background-color: transparent; }
+}
+.sa-flash {
+  animation: sa-ruleflash 2.4s ease-out;
+}
+
+@keyframes sa-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.sa-pulse {
+  animation: sa-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes sa-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+::selection {
+  background: var(--sa-marigold-soft);
+}
+
+/* Custom widget popups must carry this class so Studio keeps focus inside the widget. */
+.ag-custom-component-popup {
+  z-index: 50;
+}
