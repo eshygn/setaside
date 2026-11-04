@@ -53,7 +53,9 @@ export function PayPalCheckout({ clientId, currency, onPaid, toast }: { clientId
   const holder = useRef<HTMLDivElement>(null);
   // The buttons read the latest form values when clicked.
   const form = useRef({ amount, description });
-  form.current = { amount, description };
+  useEffect(() => {
+    form.current = { amount, description };
+  }, [amount, description]);
 
   const finish = (rec: CheckoutRecord) => {
     setLast(rec);

@@ -13,7 +13,7 @@ import { applyLicense } from '../ui/review-grid';
 import { buildAgent } from './agent';
 import { buildStudioData } from './data';
 import { builtInLayout, initialLayouts, loadLayouts, newId, saveLayouts, titlesFor, upsertLayout, type StoredLayouts } from './layouts';
-import { setTaxContext } from './store';
+import { latestSnapshot, setLatestSnapshot, setTaxContext } from './store';
 import { setAsideStudioTheme } from './theme';
 import { setAsideWidgets } from './widgets';
 import type { SetAsideRegistry } from './widgets/types';
@@ -32,7 +32,6 @@ export function Dashboard(props: Props) {
 function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
   applyLicense(licenseKey);
   const apiRef = useRef<AgStudioApi | null>(null);
-  const snapRef = useRef(snap);
   const [store, setStore] = useState<StoredLayouts>(() => loadLayouts());
   const active = store.layouts.find((l) => l.id === store.activeId) ?? store.layouts[0];
   const [initialState] = useState<AgReportState>(() => active.state);
@@ -44,7 +43,7 @@ function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
 
   // Keep the widgets' tax context and the agent's view of the data current.
   useEffect(() => {
-    snapRef.current = snap;
+    setLatestSnapshot(snap);
     setTaxContext({ preset: snap.preset, otherIncome: snap.settings.otherIncome, clock: snap.settings.clock, balance: snap.summary.balance, upliftBps: snap.settings.upliftBps });
   }, [snap]);
 
@@ -53,7 +52,7 @@ function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
   const ai = useMemo(
     () =>
       buildAgent({
-        snapshot: () => snapRef.current,
+        snapshot: latestSnapshot,
         onMode: (mode, detail, model) => setAgentMode({ mode, detail, model }),
         onWhatIf: async (upliftBps) => {
           await serverApi.settings({ upliftBps });
