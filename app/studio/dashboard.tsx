@@ -107,12 +107,27 @@ function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
     setMode('edit');
   };
 
-  const aiOpen = state.panels?.ai?.collapsed === false;
+  // Studio shows its AI panel in edit mode. "Ask SetAside" opens edit mode with the chat open and
+  // the Compose and Data panels tucked away, so the canvas keeps its width.
+  const [chatOpen, setChatOpen] = useState(false);
+  const aiOpen = mode === 'edit' && chatOpen;
   const toggleAi = () => {
     const studio = apiRef.current;
     if (!studio) return;
-    const s = studio.getState();
-    studio.setState({ ...s, panels: { ...s.panels, ai: { ...s.panels?.ai, collapsed: aiOpen } } });
+    if (aiOpen) {
+      const s = studio.getState();
+      studio.setState({ ...s, panels: { ...s.panels, ai: { ...s.panels?.ai, collapsed: true } } });
+      setChatOpen(false);
+      setMode('view');
+      return;
+    }
+    setMode('edit');
+    setChatOpen(true);
+    // Studio lays out its edit panels when the mode changes, so set ours on the next tick.
+    setTimeout(() => {
+      const now = studio.getState();
+      studio.setState({ ...now, panels: { ...now.panels, ai: { collapsed: false, width: 380 }, edit: { collapsed: true }, data: { collapsed: true }, filters: { collapsed: true } } });
+    }, 60);
   };
 
   const pageTitles = titlesFor(state, active.pageTitles);
@@ -152,16 +167,19 @@ function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
               Agent: {agentMode.mode === 'live' ? `Gemini ${agentMode.model.replace('gemini-', '')}` : agentMode.mode === 'recorded' ? 'recorded Gemini answer' : 'offline'}
             </span>
           )}
-          <ToolButton onClick={toggleAi} active={aiOpen}>
-            ✦ Ask SetAside
-          </ToolButton>
+          <button
+            onClick={toggleAi}
+            className={`h-8 rounded-lg px-3 text-[13px] font-semibold shadow-sm transition ${aiOpen ? 'bg-sa-ink text-sa-paper' : 'bg-sa-marigold text-sa-ink hover:brightness-105'}`}
+          >
+            {aiOpen ? 'Close chat' : '✦ Ask SetAside'}
+          </button>
           <ToolButton onClick={() => apiRef.current?.undo()} disabled={!history.canUndo} title="Undo">
             ↶
           </ToolButton>
           <ToolButton onClick={() => apiRef.current?.redo()} disabled={!history.canRedo} title="Redo">
             ↷
           </ToolButton>
-          <ToolButton onClick={() => setMode(mode === 'edit' ? 'view' : 'edit')} active={mode === 'edit'}>
+          <ToolButton onClick={() => setMode(mode === 'edit' ? 'view' : 'edit')} active={mode === 'edit' && !aiOpen}>
             {mode === 'edit' ? 'Done editing' : 'Edit layout'}
           </ToolButton>
           <ToolButton onClick={save}>{saved ? 'Saved ✓' : 'Save'}</ToolButton>
@@ -185,6 +203,7 @@ function StudioDashboard({ snap, licenseKey, onScenario }: Props) {
             mode={mode}
             onApiReady={(e) => {
               apiRef.current = e.api as unknown as AgStudioApi;
+              if (process.env.NODE_ENV !== 'production') (window as unknown as { __studio: unknown }).__studio = e.api;
             }}
             onStudioReady={(e) => setState(e.api.getState() as AgReportState)}
             onStateUpdated={(e) => {

@@ -157,6 +157,7 @@ function recorded(key: string): Recording | undefined {
 // --- One turn --------------------------------------------------------------------------------------
 
 export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
+  if (process.env.AGENT_DEBUG === '1') fs.writeFileSync(path.join(process.cwd(), 'data', 'agent-last-request.json'), JSON.stringify(req, null, 1));
   const id = `turn-${crypto.randomUUID().slice(0, 12)}`;
   const { question, round, key } = turnKey(req.input);
   const db = getDb();
@@ -178,7 +179,8 @@ export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
         toolChoice,
         maxRetries: 0,
         abortSignal: AbortSignal.timeout(Number(process.env.AI_TIMEOUT_MS ?? 75_000)),
-        providerOptions: { google: { thinkingConfig: { thinkingLevel: 'low' } } },
+        // Minimal thinking keeps free-tier rounds quick; the tools carry the hard parts.
+        providerOptions: { google: { thinkingConfig: { thinkingLevel: 'minimal' } } },
       }),
     );
     const toolCalls = value.toolCalls.map((c) => {
@@ -191,6 +193,7 @@ export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
     return { id, model, mode: 'live', detail: `Gemini ${model}`, text: value.text, toolCalls, usage: { inputTokens: value.usage.inputTokens, outputTokens: value.usage.outputTokens } };
   } catch (error) {
     const reason = error instanceof AiUnavailableError ? error.message : error instanceof Error ? error.message.slice(0, 160) : String(error);
+    console.error('[agent] live turn failed:', error instanceof Error ? error.message.slice(0, 600) : error);
     const rec = recorded(key);
     if (rec) {
       setAiStatus({ mode: 'recorded', model: rec.model, detail: `Replaying a recorded Gemini answer: ${reason}` });
