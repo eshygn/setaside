@@ -114,7 +114,7 @@ export async function classifyBatch(rows: readonly ClassifyInput[], rules: reado
         tools: { record_classifications: recordClassificationsTool },
         toolChoice: { type: 'tool', toolName: 'record_classifications' },
         maxRetries: 0,
-        abortSignal: AbortSignal.timeout(75_000),
+        abortSignal: AbortSignal.timeout(Number(process.env.AI_TIMEOUT_MS ?? 75_000)),
         providerOptions: { google: { thinkingConfig: { thinkingLevel: 'low' } } },
       });
       const call = result.toolCalls.find((c) => c.toolName === 'record_classifications');
