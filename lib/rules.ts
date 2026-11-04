@@ -52,7 +52,7 @@ export function deriveRule(tx: RuleTx, category: Category, id: string): Rule {
       category,
       created_from: tx.id,
       description: word
-        ? `Payments ${direction} ${who} that mention ${describeWords(vocab)} are ${categoryLabel(category).toLowerCase()}s`
+        ? `Payments ${direction} ${who} that mention ${describeWords(found!)} are ${categoryLabel(category).toLowerCase()}s`
         : `Payments ${direction} ${who} are ${categoryLabel(category).toLowerCase()}s`,
     };
   }
@@ -65,11 +65,11 @@ export function deriveRule(tx: RuleTx, category: Category, id: string): Rule {
     event_code: tx.event_code,
     category,
     created_from: tx.id,
-    description: `PayPal ${tx.event_code ?? ''} entries${word ? ` that mention ${describeWords(vocab)}` : ''} are ${categoryLabel(category).toLowerCase()}s`.replace('  ', ' '),
+    description: `PayPal ${tx.event_code ?? ''} entries${found ? ` that mention ${describeWords(found)}` : ''} are ${categoryLabel(category).toLowerCase()}s`.replace('  ', ' '),
   };
 }
 
-const describeWords = (words: string[]) => `“${words[0]}”, “${words[1] ?? words[0]}” or similar`;
+const describeWords = (word: string) => `“${word}” or similar`;
 
 export function ruleMatches(rule: Rule, tx: RuleTx): boolean {
   if (rule.payer_email && rule.payer_email !== (tx.payer_email ?? '').toLowerCase()) return false;

@@ -50,8 +50,8 @@ export function SetAsideApp(props: { initial: Snapshot; licenseKey?: string; aiK
         if (res.remaining === 0 || res.classified === 0) {
           toast({
             title: `${done} transactions classified`,
-            body: res.method === 'ai' ? res.detail : `${res.detail}`,
-            tone: res.method === 'ai' || res.method === 'rule' ? 'ok' : 'warn',
+            body: res.detail,
+            tone: res.method === 'heuristic' ? 'warn' : 'ok',
           });
           break;
         }

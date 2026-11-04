@@ -202,7 +202,8 @@ export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
         model: rec.model,
         mode: 'recorded',
         detail: `Recorded answer (${reason})`,
-        text: rec.text,
+        // Tool calls replay live, so widgets show current figures; the words were recorded earlier.
+        text: rec.text ? `${rec.text}\n\n_(Recorded Gemini answer, replayed because ${reason.toLowerCase()}. The widgets show live figures.)_` : rec.text,
         toolCalls: rec.toolCalls.map((c, i) => ({ callId: `rec-${id}-${i}`, name: c.name, arguments: c.arguments })),
       };
     }

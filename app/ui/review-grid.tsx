@@ -70,6 +70,14 @@ export function ReviewGrid(props: {
   const [search, setSearch] = useState('');
   const cur = snap.preset.currency;
 
+  // When classification finishes and there is something to check, go straight to the queue.
+  const pending = snap.counts.unclassified;
+  const [lastPending, setLastPending] = useState(pending);
+  if (pending !== lastPending) {
+    setLastPending(pending);
+    if (pending === 0 && snap.counts.needsReview > 0) setView('review');
+  }
+
   const counts = useMemo(() => Object.fromEntries(VIEWS.map((v) => [v.id, snap.rows.filter(v.test).length])) as Record<View, number>, [snap.rows]);
   // Stay on "Needs review" while it has rows; once it empties, show everything.
   const activeView: View = view === 'review' && counts.review === 0 && snap.counts.unclassified === 0 ? 'all' : view;
