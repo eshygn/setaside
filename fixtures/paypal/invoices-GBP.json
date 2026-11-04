@@ -1,0 +1,1146 @@
+{
+ "items": [
+  {
+   "id": "INV2-FERN0011-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0011",
+    "currency_code": "GBP",
+    "invoice_date": "2026-05-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-05-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0012-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0012",
+    "currency_code": "GBP",
+    "invoice_date": "2026-06-01",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "820.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "820.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "820.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-06-01",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "820.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0013-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0013",
+    "currency_code": "GBP",
+    "invoice_date": "2026-06-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-06-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0014-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0014",
+    "currency_code": "GBP",
+    "invoice_date": "2026-07-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-07-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0015-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0015",
+    "currency_code": "GBP",
+    "invoice_date": "2026-07-07",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "560.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "560.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "560.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-07-07",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "560.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0016-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0016",
+    "currency_code": "GBP",
+    "invoice_date": "2026-08-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-08-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0017-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0017",
+    "currency_code": "GBP",
+    "invoice_date": "2026-08-12",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "820.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "820.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "820.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-08-12",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "820.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0018-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0018",
+    "currency_code": "GBP",
+    "invoice_date": "2026-09-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-09-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0019-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0019",
+    "currency_code": "GBP",
+    "invoice_date": "2026-09-17",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "560.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "560.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "560.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-09-17",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "560.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0020-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0020",
+    "currency_code": "GBP",
+    "invoice_date": "2026-10-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-10-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0021-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0021",
+    "currency_code": "GBP",
+    "invoice_date": "2026-11-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-11-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0022-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0022",
+    "currency_code": "GBP",
+    "invoice_date": "2026-11-28",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "480.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "480.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "480.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-11-28",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "480.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0023-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0023",
+    "currency_code": "GBP",
+    "invoice_date": "2026-12-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2026-12-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0024-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0024",
+    "currency_code": "GBP",
+    "invoice_date": "2027-01-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-01-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0025-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0025",
+    "currency_code": "GBP",
+    "invoice_date": "2027-01-03",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "560.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "560.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "560.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-01-03",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "560.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0026-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0026",
+    "currency_code": "GBP",
+    "invoice_date": "2027-02-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-02-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0027-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0027",
+    "currency_code": "GBP",
+    "invoice_date": "2027-03-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-03-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0028-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0028",
+    "currency_code": "GBP",
+    "invoice_date": "2027-03-16",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Hollis & Vane Architects",
+      "email_address": "studio@hollisvane.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website build — project stage",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "650.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "650.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "650.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-03-16",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "650.00"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "INV2-FERN0029-SEED",
+   "status": "PAID",
+   "detail": {
+    "invoice_number": "FERN-0029",
+    "currency_code": "GBP",
+    "invoice_date": "2027-04-02",
+    "payment_term": {
+     "term_type": "NET_10"
+    }
+   },
+   "invoicer": {
+    "name": {
+     "full_name": "Jo Mensah"
+    },
+    "email_address": "jo@fernleafprints.example"
+   },
+   "primary_recipients": [
+    {
+     "billing_info": {
+      "business_name": "Brightwater Dental",
+      "email_address": "accounts@brightwaterdental.example"
+     }
+    }
+   ],
+   "items": [
+    {
+     "name": "Website care retainer",
+     "quantity": "1",
+     "unit_amount": {
+      "currency_code": "GBP",
+      "value": "450.00"
+     }
+    }
+   ],
+   "amount": {
+    "currency_code": "GBP",
+    "value": "450.00"
+   },
+   "due_amount": {
+    "currency_code": "GBP",
+    "value": "0.00"
+   },
+   "payments": {
+    "paid_amount": {
+     "currency_code": "GBP",
+     "value": "450.00"
+    },
+    "transactions": [
+     {
+      "payment_date": "2027-04-02",
+      "method": "PAYPAL",
+      "amount": {
+       "currency_code": "GBP",
+       "value": "450.00"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "total_items": 19,
+ "total_pages": 1
+}
