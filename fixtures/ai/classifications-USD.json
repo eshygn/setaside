@@ -1,0 +1,2671 @@
+{
+ "model": "gemini-3.5-flash-lite",
+ "recordedAt": "2026-11-04T19:09:53.746Z",
+ "items": {
+  "MDLUE7MPKHGC80000": {
+   "category": "fee",
+   "confidence": 1,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "MC07BCE8HXET20001": {
+   "category": "client_payment",
+   "confidence": 1,
+   "reason": "Payment for invoice for website retainer."
+  },
+  "N0897HL9UYHAC0002": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "KP4N2K05JSD480003": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "P9TD0H9PHCAA50004": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "8VEH07URT55EC0005": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate sharing utility bills."
+  },
+  "PS5WWR1DYC8RU0006": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Birthday money from a friend."
+  },
+  "KW42NTNV6MSRH0007": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "VBDAD5MJV646X0008": {
+   "category": "reimbursement",
+   "confidence": 0.95,
+   "reason": "Client reimbursing hosting costs."
+  },
+  "1YCDN848DE3PJ0009": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "RRY07JRSY6U2H0010": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "NYEL5FY1G6GGD0011": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "T8UFPGN5EGWA90012": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website changes work."
+  },
+  "REBH6EU47BTL60013": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate splitting a bill."
+  },
+  "HBPGMCSGWB64M0014": {
+   "category": "personal_transfer",
+   "confidence": 1,
+   "reason": "Withdrawal to own bank account."
+  },
+  "TJT88HULB4NLC0015": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Personal transfer from flatmate."
+  },
+  "E6LTACNMYM7D00016": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "9LA6RE2US72J30017": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "C49S8FGBBC6GB0018": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "CEBHK1G5UPN1F0019": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "W1MT5LHW2AVNS0020": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "B2ASJLRXGA7P20021": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "TKV2X4HEMP7640022": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Personal payment from flatmate."
+  },
+  "8HAN63UH1A6S30023": {
+   "category": "client_payment",
+   "confidence": 1,
+   "reason": "Payment for invoice stage payment."
+  },
+  "R02JHE0MSF6D10024": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "N9JTR9PVA9JBR0025": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "96K80HCEM98160026": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "F0RR72SHTLNH60027": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Money sent to flatmate for tickets."
+  },
+  "C2GTU8WFN8BNY0028": {
+   "category": "personal_transfer",
+   "confidence": 1,
+   "reason": "Withdrawal to own bank account."
+  },
+  "PUM37H9RBSGPL0029": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "V20MD73F1VKXK0030": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Personal transfer from flatmate/friend."
+  },
+  "JL3NGCUVFERED0031": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for landing page sprint."
+  },
+  "MNU136SKCBV230032": {
+   "category": "fee",
+   "confidence": 1,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "72KUK317D2UV10033": {
+   "category": "client_payment",
+   "confidence": 1,
+   "reason": "Payment for invoice for website retainer."
+  },
+  "PB8F8X5B5HWDH0034": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate sharing grocery costs."
+  },
+  "H35TUFBWDX48D0035": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for menu page updates."
+  },
+  "SUHVR5LGEC0RR0036": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "M7H7JKPB02ANN0037": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "8TDDGBTGC8W260038": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate sharing utility bills."
+  },
+  "UKM0PVVKY0NUK0039": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "HV33VMMT5TKJL0040": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "NLM5HEVU7G10U0041": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "LGW3TL2X2TP5L0042": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "DXRPV5DKGG1VY0043": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for timetable illustrations."
+  },
+  "4EVVGU5R7LBAG0044": {
+   "category": "reimbursement",
+   "confidence": 0.95,
+   "reason": "Client paying back for model photo materials."
+  },
+  "YS22E77LTMVAV0045": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "E3SDCYWY8RLR30046": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "7X1H1N7ECKNCB0047": {
+   "category": "personal_transfer",
+   "confidence": 1,
+   "reason": "Withdrawal to own bank account."
+  },
+  "R5XKG8YNTL3F20048": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "4NCYAE40CWM8N0049": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Gift kitty contribution."
+  },
+  "9BRGM57NL0W6J0050": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "5L1XHXEJC22230051": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "PX666G7NWMVEF0052": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "EP6YET84YTYAU0053": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "U1GC5VR49N8T90054": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "6XENNY9FHUFLT0055": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "STE5KSNAXTNJD0056": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "CLH2136ASN25N0057": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "ATC2GH9K9UMNE0058": {
+   "category": "client_payment",
+   "confidence": 1,
+   "reason": "Payment for invoice stage payment."
+  },
+  "RSR7VYYB46N240059": {
+   "category": "sale",
+   "confidence": 1,
+   "reason": "Checkout order for Fernleaf Prints shop."
+  },
+  "CF9L055RWN4PV0060": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "9D5RCGXKN7XN50061": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for Christmas order form."
+  },
+  "M5MEDC3KL5XKL0062": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "0FRP7BAR5AHTC0063": {
+   "category": "personal_transfer",
+   "confidence": 0.98,
+   "reason": "Withdrawal to the user's own bank account."
+  },
+  "L25LU84N1FV8K0064": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal expense split for tickets."
+  },
+  "X7SS91BR1JTDW0065": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "X2CMJLSBG0AGP0066": {
+   "category": "refund",
+   "confidence": 0.98,
+   "reason": "Refund issued to a customer for a lost order."
+  },
+  "VEYK2WDNCP4T00067": {
+   "category": "fee",
+   "confidence": 0.98,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "WYJRK31P9Y32M0068": {
+   "category": "client_payment",
+   "confidence": 0.98,
+   "reason": "Client payment for a website retainer invoice."
+  },
+  "MSK6G2G8A55650069": {
+   "category": "refund",
+   "confidence": 0.98,
+   "reason": "Refund issued to a customer for a wrong size."
+  },
+  "7MK0BEN22LULJ0070": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "N7P5F7A8KS2NK0071": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "X5VJ1MYKRURT40072": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "TR28VL5K6GPA20073": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "EVUV297E50LTF0074": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Flatmate payment for electric and wifi bills."
+  },
+  "EL0ABP0D4DYM30075": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "LX2RV6G2AN0KX0076": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "7PD89M3LSYG830077": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "YG7W71MHWS0PG0078": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "JEFK4EUR19XTJ0079": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "PGNYAD2KGBS8M0080": {
+   "category": "refund",
+   "confidence": 0.98,
+   "reason": "Refund issued to a customer for a damaged item."
+  },
+  "P6K90CL5W2V560081": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "FX2G6E4CS9RNN0082": {
+   "category": "reimbursement",
+   "confidence": 0.95,
+   "reason": "Client reimbursing hosting costs covered by the user."
+  },
+  "5K0JATCWDJS1U0083": {
+   "category": "personal_transfer",
+   "confidence": 0.98,
+   "reason": "Withdrawal to the user's own bank account."
+  },
+  "WG9REKUG3JK0V0084": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "W50051VJXGFPE0085": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal gift kitty contribution."
+  },
+  "LEGF8K4241E990086": {
+   "category": "personal_transfer",
+   "confidence": 0.65,
+   "reason": "Small personal transfer with vague note."
+  },
+  "YCN17A0HM0XG90087": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "P9ASG3U2M32B30088": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "1UPALHG0RFYEV0089": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "6SU33CCEH2TK70090": {
+   "category": "client_payment",
+   "confidence": 0.98,
+   "reason": "Client payment for an illustration pack campaign."
+  },
+  "TAERA39KUB4UJ0091": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "4VDFHCNW1NP2X0092": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "R064LGCXWD6JE0093": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "2A75PL232EGR10094": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website changes."
+  },
+  "SM4K6WD0CDSR70095": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "LXPCWM1B4J9UG0096": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "HKYWE7SLBMC0S0097": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "4AEJLW4S6FW770098": {
+   "category": "personal_transfer",
+   "confidence": 0.98,
+   "reason": "Withdrawal to the user's own bank account."
+  },
+  "B2984NB3L1KHW0099": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "2L0Y94U66V5RD0100": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "M46YDCF0T3WPF0101": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal expense split for tickets."
+  },
+  "T8LYHJ0NL12N90102": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "0CRK8TNYA4A4V0103": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal expense split for tickets."
+  },
+  "K1MU4HG9VA39A0104": {
+   "category": "fee",
+   "confidence": 0.98,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "0XMB9KK14GLV50105": {
+   "category": "client_payment",
+   "confidence": 0.98,
+   "reason": "Client payment for a website retainer invoice."
+  },
+  "AEJRN4CJ85S8A0106": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "4XPU57T4MXEW30107": {
+   "category": "client_payment",
+   "confidence": 0.98,
+   "reason": "Client payment for an invoice stage payment."
+  },
+  "VMNVYMXD4JGHF0108": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "3UUWM2D9K4VWU0109": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "EFG73EXRWDUEK0110": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "Y1MKGYVJ28SRS0111": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "VD558S2R5FWNU0112": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Flatmate payment for electric and wifi bills."
+  },
+  "XVXF3ABDBKK3Y0113": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "THVLDB54N6YD20114": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "EX8NRGXXG01740115": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "4RYNHS7F8BCJ00116": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "4S5HXTMGVNMJY0117": {
+   "category": "client_payment",
+   "confidence": 0.98,
+   "reason": "Client payment for class timetable illustrations."
+  },
+  "SR33VG5A44TKD0118": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "D11KBB2US9YEP0119": {
+   "category": "sale",
+   "confidence": 0.98,
+   "reason": "Customer checkout order with an invoice number."
+  },
+  "ALYLD2KK31JJT0120": {
+   "category": "reimbursement",
+   "confidence": 0.85,
+   "reason": "Client paying for materials costs covered."
+  },
+  "MA0L31K441TAA0121": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "H9PN1DAT7UFFR0122": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for commercial order."
+  },
+  "4T6LEJ6VM5RH90123": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "PYN47LUNTW56X0124": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "VX24CFKBG0LY80125": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "BAR0DDVL9163G0126": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "VMDTX6GB29ND40127": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "UE8PELTKC9WNW0128": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "DPKX4W7S1FUX70129": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "2WH79US0KE8B70130": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "5WRRV45JG0U130131": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "34BY8H0R11UBR0132": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "EL5L8W1XCDNBD0133": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "VDCSHM2M7PDNV0134": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "41WWNYDR0Y86F0135": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "0JJH89T1TVC0D0136": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "BRK9MHW9DKLHB0137": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate sharing grocery costs."
+  },
+  "H5DG8J434X1Y00138": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "SAB2VNJH9W1LS0139": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "PYT64AML4DE580140": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "0R2DHPMAM0DHC0141": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "6AKEVHJEM0CG60142": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "Y5BVTNNFB91F90143": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Gift kitty contribution with friends."
+  },
+  "HD1U2Y55GMTXE0144": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "V0BAJBMGJV7EE0145": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "NKX0AGYCN2NRF0146": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "7X6R2N75E8L5D0147": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "MS65526L0HKGJ0148": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "UX567GHW736560149": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "YAGL3XHR5BCWW0150": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal cross-border fee."
+  },
+  "53JN585X556T20151": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client invoice payment for retainer."
+  },
+  "SVSULDLDPUFWV0152": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "7NP3YY6VCMVD00153": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "KB1K7DAJLFFNH0154": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "L3Y47GVFG24AX0155": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "UKVCP65THYV0Y0156": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "FC72KN47T9KB10157": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "M8YM59WNHPH7X0158": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for illustration work."
+  },
+  "Y8B6LE6SCLW180159": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Flatmate utility bill sharing."
+  },
+  "DLJLMGFB97ME40160": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "DT0TFNM2MDJ9K0161": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for commercial order."
+  },
+  "YVXNJ9ADK80FY0162": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for site launch."
+  },
+  "J0BP6XG33L55X0163": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "80A7H01AKWU7R0164": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Friendly payment with vague note."
+  },
+  "G9M2YG6477Y9R0165": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "N5S81WXBCEW220166": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "9N7JV22103KLL0167": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Gift kitty contribution with flatmate."
+  },
+  "LFM2YMJ2HP9GM0168": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "88PK4H3U5M9GJ0169": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "4MVRKRUMAAU8A0170": {
+   "category": "reimbursement",
+   "confidence": 0.9,
+   "reason": "Client paying back expenses (courier + prints)."
+  },
+  "Y259FHAGBNNKD0171": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Friendly payment with vague note."
+  },
+  "AXFKY11GF0GEM0172": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "LKGT2EK8SLWPE0173": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "PXLEX4XNNULCS0174": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "0DXMD0WDFEGNG0175": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Personal sharing of expenses ('my half')."
+  },
+  "CYU34ANYBC7VJ0176": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "CKRXKY6KR7ENP0177": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "RHHE8UJ1UCWKJ0178": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "R7D5LYRYMV6C60179": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for shop item."
+  },
+  "BXVRJ5XARBPUH0180": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1151."
+  },
+  "6P0W3G6MK6T320181": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1155."
+  },
+  "PJSVY4J8J69PS0182": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1157."
+  },
+  "BD0YB38EGXG290183": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1156."
+  },
+  "B8A1CH9DGWVGC0184": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1158."
+  },
+  "ME2KVP0NS5HMV0185": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Chargeback refund for order FP-1093."
+  },
+  "CWLXTJMS41AD70186": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "Chargeback processing fee."
+  },
+  "C9SX8EEM5MCXT0187": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1159."
+  },
+  "0DMH33LV76B1T0188": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "DNA2MTEWKKFXY0189": {
+   "category": "client_payment",
+   "confidence": 0.9,
+   "reason": "Client payment for menu page updates."
+  },
+  "X841F1VC994H80190": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1160."
+  },
+  "WDWVXJ7SMAHG30191": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1161."
+  },
+  "19U3A7DK6JXBX0192": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1162."
+  },
+  "E67CW36XK0EMH0193": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "T73PT3P9YLJGY0194": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1163."
+  },
+  "MLLCNRF0S698E0195": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website retainer invoice FERN-0019."
+  },
+  "TV5U3M8XY8K6F0196": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Personal payment from a friend with vague note."
+  },
+  "84UHGNX6HJ0A60197": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Personal transfer or split expense with a friend."
+  },
+  "G0CCB6VPESKVS0198": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Personal payment from a friend with vague note."
+  },
+  "S6VCKP8TD1XYR0199": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1164."
+  },
+  "253NJJYU2W4JH0200": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1165."
+  },
+  "0N8K80E3WJPRV0201": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1167."
+  },
+  "KC0GYB3ABRP9R0202": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1166."
+  },
+  "FVRM0XAPLGRYC0203": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1168."
+  },
+  "93PLY05YMSTCE0204": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Flatmate bills payment."
+  },
+  "4CD8NHVF08W6P0205": {
+   "category": "client_payment",
+   "confidence": 0.9,
+   "reason": "Client payment for class timetable illustrations."
+  },
+  "CGAS1UDP4YJJN0206": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1169."
+  },
+  "85SCUH988PTYH0207": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1170."
+  },
+  "U16GLBET9XM4G0208": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1172."
+  },
+  "LB9L8XA711K1Y0209": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1171."
+  },
+  "5JUDVMR2DAL7A0210": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Customer refund for order FP-1170."
+  },
+  "JUAEV0KKF6J200211": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "H8GRVR7B33W880212": {
+   "category": "reimbursement",
+   "confidence": 0.85,
+   "reason": "Client paying back covered expenses (courier + prints)."
+  },
+  "EL9395YA76M5L0213": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client stage payment for invoice FERN-0020."
+  },
+  "S43VFCMFE6AEJ0214": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1173."
+  },
+  "JD1U1UA6R1W6D0215": {
+   "category": "personal_transfer",
+   "confidence": 0.5,
+   "reason": "Personal transfer with vague note 'for the thing'."
+  },
+  "2MDLT519AJB3C0216": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1174."
+  },
+  "VM8N0RGNMHG430217": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1175."
+  },
+  "RM1VE3XMVA4V00218": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Customer refund for order FP-1171."
+  },
+  "2DM0XE67BU42P0219": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for freelance dev work."
+  },
+  "Y5Y00413M9KED0220": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Personal transfer or split expense."
+  },
+  "7HTTFKT7D1HC60221": {
+   "category": "client_payment",
+   "confidence": 0.9,
+   "reason": "Client payment for website changes."
+  },
+  "3ENJMX8XKTKMX0222": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1177."
+  },
+  "K1CR6KTCDDLHH0223": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1176."
+  },
+  "X6H15B33KVYSV0224": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1178."
+  },
+  "BBBY635DD4NL70225": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1181."
+  },
+  "GYXF8NXRSAH970226": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1180."
+  },
+  "SFH6LG9VSC77K0227": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1179."
+  },
+  "FN9LGM422PFJR0228": {
+   "category": "personal_transfer",
+   "confidence": 0.6,
+   "reason": "Personal deposit from friend."
+  },
+  "1JS4D435PM9M10229": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1182."
+  },
+  "8RBNBP3HXB7J40230": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "3YVY1L7XV9P1N0231": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1184."
+  },
+  "R0DSUL0L5HWSB0232": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1183."
+  },
+  "KCKLYVT63E9MU0233": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1186."
+  },
+  "XGG4SG77UTBLF0234": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1185."
+  },
+  "SSD7963YVSFEV0235": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1187."
+  },
+  "70Y4X5VTAW43E0236": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal cross-border transaction fee."
+  },
+  "8ERU6FXN47VH80237": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website retainer invoice FERN-0021."
+  },
+  "A2U2DPF0T40VE0238": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1188."
+  },
+  "FX4YH4A4X4KWA0239": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for shop order via checkout invoice FP-1189."
+  },
+  "DK9EJ7AKC2T440240": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "NWEAD7R1HVJ5P0241": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "4UEE7ARRR9HY20242": {
+   "category": "client_payment",
+   "confidence": 0.85,
+   "reason": "Freelance payment from a client."
+  },
+  "P6E8H1TATKFXB0243": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Flatmate bill sharing."
+  },
+  "1M1GWRYDG1RCE0244": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "JJP0Y92X56JG10245": {
+   "category": "client_payment",
+   "confidence": 0.85,
+   "reason": "Deposit for freelance work or holiday project."
+  },
+  "WDT04E0LGL5800246": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "1HVY8G5U51GSL0247": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Personal grocery sharing."
+  },
+  "KGHCJUJET1TR50248": {
+   "category": "client_payment",
+   "confidence": 0.65,
+   "reason": "Small casual payment with vague note."
+  },
+  "TEE861MKFTNSR0249": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1191."
+  },
+  "NLL6RX6RJ37VJ0250": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "KFD01WK522TX10251": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1185."
+  },
+  "TGRNXGKY27N880252": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Personal grocery sharing."
+  },
+  "RDJNGWSK4E6A90253": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1190."
+  },
+  "A527BHH9S9WUW0254": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "UD46D2XDY9RDR0255": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "2V7XCTB3K66820256": {
+   "category": "reimbursement",
+   "confidence": 0.7,
+   "reason": "Client paying back covered expenses."
+  },
+  "NASCK1HNY07UM0257": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website updates."
+  },
+  "B7DMANBE4C9YC0258": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "RAL8EW0EMJJDC0259": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "528334S80PT940260": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "7NJVEBV916VPC0261": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Invoice payment from client."
+  },
+  "5JR9NFA1TRRKU0262": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "7RLDHLL9XUMX70263": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "U4KBD1Y3NNSXW0264": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "MD9RBED5LW4KA0265": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1197."
+  },
+  "L3LW5A03B2CMR0266": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "U7XNK1X9H7EU80267": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "A75W8GV77T62N0268": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "B7VTYTDYWKG860269": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "P8H785HB1CSMU0270": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "W2087F3LXL2CX0271": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "87EG2HF6HPXVH0272": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "FC4DPMHC9DY770273": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "L2GFG3LAKD1C80274": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "P9LNKD4RC0H5X0275": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "UW1KSEUN95RPN0276": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal cross-border fee."
+  },
+  "0KWRXU72G3EHX0277": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Invoice payment from client."
+  },
+  "2K4X1CNMEB6VW0278": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for illustrations."
+  },
+  "SGJHDC2USCE9S0279": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "BFNHF85CM1PR10280": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Flatmate share of bills."
+  },
+  "Y00GMHKD1GSUP0281": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Flatmate ticket money."
+  },
+  "35NG7WE2AJLCU0282": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "LC08GV0PNDHA60283": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "6DBDDG19GW00L0284": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for illustration pack."
+  },
+  "VJM12WP3VYJX40285": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for order."
+  },
+  "SC30GVHD4TDCC0286": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "TMY47EK3HYRTT0287": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "TRYXBWJL7JV2P0288": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1202."
+  },
+  "JHE572NRDFF910289": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "05TK120M3K6UC0290": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "7GTHR9SJM0GVP0291": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "MKT8J84PWXJ2G0292": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "FR9F9944STF220293": {
+   "category": "reimbursement",
+   "confidence": 0.75,
+   "reason": "Client reimbursing printing expenses."
+  },
+  "DMBATAB6GKA9G0294": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "9KL3H23JY7MXB0295": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "4TF4DWSY7MKD70296": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "EVGSGLM6H6XFA0297": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "FC6EX49L5YRVE0298": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints."
+  },
+  "73V4K4Y6BUFRY0299": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund for order FP-1223."
+  },
+  "M1LGEA3PPWMFP0300": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "X0SB1L4B417270301": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "92XJN0CNEXPYV0302": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "ABY4P8PWPT3MA0303": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "S6MBX5NY4F3PU0304": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "MKEXJC5600B3H0305": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "AW4BWW6TP0NGP0306": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Birthday gift kitty collection"
+  },
+  "CCSSTKN3MHFPR0307": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "71J5C68P4DBRV0308": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Payment for invoice FERN-0024"
+  },
+  "NHBSH6F8NKB3R0309": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Grocery money split"
+  },
+  "VFU4CTEGR772D0310": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "GF07S7JB2RXE60311": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account"
+  },
+  "542HJ9S6S0XCK0312": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "R80LYX9Y5GUC00313": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "YNULE628SY2T50314": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "53CMG6TCDBHMG0315": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Freelance payment for menu page updates"
+  },
+  "13X635DB7NF5N0316": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Personal thank you payment from friend"
+  },
+  "R4BS14Y704E4B0317": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Personal thank you payment from friend"
+  },
+  "KLM6D7CPVAMGV0318": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Taxi expense sharing between individuals"
+  },
+  "TAU4RS0CVB9HV0319": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "CT4X9CMV53WLD0320": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal cross-border fee"
+  },
+  "HU3043NRXB2H90321": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "AGUB8P745PL5Y0322": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "0SEXSW334CL820323": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Website retainer payment for invoice FERN-0025"
+  },
+  "D18TKNRKRWB600324": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "0JS9JDGHWY3R50325": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Taxi expense sharing between individuals"
+  },
+  "NHTSLM47KA2JC0326": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "4UYUVWDTAUEEG0327": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "RRV7H88VW15UV0328": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "YPNR0NY6D3Y1U0329": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "NT6EBEDX0LJHT0330": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Flatmate electric and wifi bill split"
+  },
+  "WVBC0AR2A6YJ20331": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "UD10TLD2XFB5B0332": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Customer order refund"
+  },
+  "TP5D2RTY4JTCA0333": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "75SKW64423GMF0334": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "BX81S4HSDBN0M0335": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "50J5RP0F7U3CY0336": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "GB7NV1H4HLL990337": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "BRJW35X74B2GH0338": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account"
+  },
+  "50C5VG1XNMDCX0339": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "13TM20PCWA78V0340": {
+   "category": "reimbursement",
+   "confidence": 0.95,
+   "reason": "Reimbursement for hosting costs covered"
+  },
+  "9S0BFUGFAE3JG0341": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "NA4BPJMYHG8RD0342": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "12KMSULV4MTJX0343": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Customer order refund for lost item"
+  },
+  "HX4WRUTAKY2UR0344": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Freelance payment for menu page updates"
+  },
+  "EYTKJ0F6839K10345": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "L2NG252985EVE0346": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "61CC176241HTR0347": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "8CLEMJGVNYVPN0348": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for illustration pack"
+  },
+  "DPLWMKRHVDBUM0349": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "VX6LT4EMCW8KF0350": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "5LNENTB6GM9VE0351": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account"
+  },
+  "N4YYRN69BR7160352": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "JHUPW1N0NWW190353": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "1JYT7JTFM8PW10354": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "Y2F4L31KK5FBH0355": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "NNJY0BYSJ12580356": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Stage payment for invoice FERN-0026"
+  },
+  "NHDTY8XRBW3J30357": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for class illustrations"
+  },
+  "3Y3L9GTS086990358": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "10KGL4TNF6PKS0359": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints shop order checkout"
+  },
+  "S99L4WSPX18U00360": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal payment from a friend for 'my half'."
+  },
+  "9WVHBNYSGFUG10361": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with an invoice number for Fernleaf Prints."
+  },
+  "GAMDHPYNUS8AG0362": {
+   "category": "fee",
+   "confidence": 0.99,
+   "reason": "PayPal cross-border fee."
+  },
+  "GLAFJ6WRLG8DT0363": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "30GCM8LVJYAHR0364": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "CYAMHHJXNADGU0365": {
+   "category": "client_payment",
+   "confidence": 0.99,
+   "reason": "Client payment for website retainer invoice."
+  },
+  "0NG6JJTEGGVS90366": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "UC39KD6AFV0LY0367": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints despite gift note."
+  },
+  "8E2SM1X343PTM0368": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "N4R9XYE6CTNBJ0369": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints with gift wrap note."
+  },
+  "SFKXF8Y14NM4H0370": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "9F09MRAA7LJNF0371": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Flatmate paying for bills."
+  },
+  "PV9GB2N765BAF0372": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "P1K3H0VF4YTHL0373": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "SCUJMEBKK209D0374": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints despite birthday note."
+  },
+  "URK837PETX0K40375": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "R933S9F6BTNJL0376": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "NJKNBD2C64AJ20377": {
+   "category": "personal_transfer",
+   "confidence": 0.99,
+   "reason": "Withdrawal to own bank account."
+  },
+  "2F6CGP7KXRLFK0378": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "7MJLNP8B76UTR0379": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal payment for dinner from an acquaintance."
+  },
+  "YL9UHCPRAA13C0380": {
+   "category": "refund",
+   "confidence": 0.99,
+   "reason": "Refund issued to customer for damaged order."
+  },
+  "9C6H834KX3PYE0381": {
+   "category": "client_payment",
+   "confidence": 0.99,
+   "reason": "Client payment for menu page updates."
+  },
+  "MSKW56NX7RWBK0382": {
+   "category": "reimbursement",
+   "confidence": 0.9,
+   "reason": "Client paying back expenses for printing site boards."
+  },
+  "V11DU940517DR0383": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "502F3WYGKD7E90384": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Small personal payment between individuals."
+  },
+  "DMBEUPE7UH1710385": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "695TP3MY9L3DY0386": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "C49044R39M2TW0387": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "9UL94KNSGD1230388": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "FWC2A2N6EBCM80389": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "K03M03SM5NX340390": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Birthday gift money from a person."
+  },
+  "H6XHMHULW0P8T0391": {
+   "category": "refund",
+   "confidence": 0.99,
+   "reason": "Refund issued to customer for changed mind."
+  },
+  "B7C6SC85J950P0392": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "DNW6B2VMJKA690393": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "YX5WV2LNW16280394": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "R0VLWEDD5WEAH0395": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "PCR86GFCG7TCS0396": {
+   "category": "refund",
+   "confidence": 0.99,
+   "reason": "Refund issued to customer for changed mind."
+  },
+  "SK56GRH6DNL0A0397": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "EBALJBRPMH35U0398": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "WFRKJ2KNLYP5T0399": {
+   "category": "personal_transfer",
+   "confidence": 0.99,
+   "reason": "Withdrawal to own bank account."
+  },
+  "58U7B2XV15KSN0400": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "F354YS5XCLVLP0401": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Checkout order for Fernleaf Prints with gift wrap note."
+  },
+  "G8V95H861FL880402": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "67SSV480XESWW0403": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "AFVY15AW475H60404": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "XSSPWLE4EWVME0405": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "8VWKSWY6M4XT60406": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "1M4LLB228LEDE0407": {
+   "category": "fee",
+   "confidence": 0.99,
+   "reason": "PayPal cross-border fee."
+  },
+  "PYFXFVP6SEN9A0408": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "D77558L7LMVJH0409": {
+   "category": "client_payment",
+   "confidence": 0.99,
+   "reason": "Client payment for website retainer invoice."
+  },
+  "4SVAUX1WLRV8U0410": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "BHRY6R5YB3T1N0411": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "2WTHGLKJYCSUK0412": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "RT9MMLPS6B7CM0413": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "WEV5G91FLAKWK0414": {
+   "category": "client_payment",
+   "confidence": 0.99,
+   "reason": "Client payment for portfolio pages."
+  },
+  "JWHY09C2SBPHA0415": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Personal payment for taxi split from flatmate."
+  },
+  "PX1KSN6JJA3MH0416": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Flatmate payment for bills."
+  },
+  "9HDPSSBT15L490417": {
+   "category": "client_payment",
+   "confidence": 0.99,
+   "reason": "Client payment for menu page updates."
+  },
+  "YDMRUMMFTBBYY0418": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "RP3N8UA8LLUEK0419": {
+   "category": "sale",
+   "confidence": 0.99,
+   "reason": "Checkout order with invoice for Fernleaf Prints."
+  },
+  "FTGUPW6LE2CRM0420": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "C6NKBLWAKA9910421": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "5VJL5EGAC8GHW0422": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for freelance illustration work."
+  },
+  "47EU8HK12AV530423": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Personal transfer split note 'my half'."
+  },
+  "2PHFKWPJF064P0424": {
+   "category": "personal_transfer",
+   "confidence": 0.7,
+   "reason": "Personal expense or payment for groceries."
+  },
+  "9B4A61PLLMU0X0425": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "CRPVYTNJ594D80426": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for order."
+  },
+  "2UU8N67ARFJHP0427": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "UCUN3F6D9SAXE0428": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "Y5R3KT3AW6RGJ0429": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "37AN6X2RJ4C3M0430": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "W4M23339J8Y8M0431": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "S8TUF8UKWBFHB0432": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "FPG3VYTEJ4G2U0433": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "1BD4G477TT7RV0434": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "MWJF0FBF8PWBD0435": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "8V8AVBJEYDK3W0436": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "B391A707H6E130437": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "SEKUFGKT1KH8W0438": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for lost order."
+  },
+  "GUJBCG2W7E5LU0439": {
+   "category": "reimbursement",
+   "confidence": 0.95,
+   "reason": "Client reimbursing hosting costs."
+  },
+  "EH3YL981LNF0L0440": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "P6L1K5H92LMA50441": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "99E75235EJ5DC0442": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "VDFNJ2LWGT4S10443": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "AJMN4XL993NMC0444": {
+   "category": "client_payment",
+   "confidence": 0.8,
+   "reason": "Deposit for service/work from client."
+  },
+  "RLM20YSUC9L5R0445": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "X0X9M25AWEN9U0446": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for damaged order."
+  },
+  "4AXLT8EB97XH60447": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "JXE97NLN2651F0448": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "4XUEG6UUF4VCD0449": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "SF63AVK8S7EEK0450": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "HFCTMXSVWMNRS0451": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "0TCC4VYRV8ABU0452": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "U42FJDGLLN9PW0453": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "EAF7PEXC96HB90454": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for order."
+  },
+  "MB7T13NS752K10455": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "8GC85YYRUP7G40456": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "5YXA3SSD3PNG50457": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "4GV5V952H4EMG0458": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "LAWWUY5UAL7680459": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "MB4EXBWXRU33U0460": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for class timetable illustrations."
+  },
+  "SUNX6F361Y7D90461": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "2BN9DUKYF7T0S0462": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "3YW0CH9PCDDS80463": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account."
+  },
+  "PRMB9PGSTK2H00464": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "RF7H88S9JWU0X0465": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "CBWE2GUK3PELG0466": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "HREWA9FW0NFXF0467": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "16T0EBRPLPUPY0468": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for order."
+  },
+  "U4145M53P549B0469": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for menu page updates."
+  },
+  "J996GL8R5T6YJ0470": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "2TCE52E6D92TV0471": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "K04BB2VSEU0970472": {
+   "category": "fee",
+   "confidence": 0.95,
+   "reason": "PayPal processing fee."
+  },
+  "WXFKEYHFRTSEC0473": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "YDGFTG6L8MJ9A0474": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "AY3M78D78LRHB0475": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client payment for website retainer invoice."
+  },
+  "YKFE5Y4VTWE6A0476": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "YJH9WC2T7K6HP0477": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "L9RUBTCE336YC0478": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Customer payment for print order with invoice."
+  },
+  "75U4NT7M21X450479": {
+   "category": "refund",
+   "confidence": 0.95,
+   "reason": "Refund issued to customer for order."
+  },
+  "BTU666X4C3VUP0480": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "FPTCEFSRFPA2D0481": {
+   "category": "personal_transfer",
+   "confidence": 0.85,
+   "reason": "Flatmate sending bill money"
+  },
+  "KLVV92K5TDLDP0482": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "WCD0S1J64DXBK0483": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "0XV9MA9G62A0E0484": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "VV2DT0YB9T4N60485": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "VW2J311EYS7FN0486": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "JGYFLHMXY00XY0487": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "VFR96BMYV78B80488": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "4L4T1C84P5F200489": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Client invoice payment"
+  },
+  "HC8HXVSU8LM4A0490": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "MWPNE36JNH6M30491": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "1NLT8NV3U3T8Y0492": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "3W3GXL2K5ME4B0493": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "CSBWWBR0ED8NW0494": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "VR5K70P4RM1AN0495": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account"
+  },
+  "9JS0TV5219GTA0496": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "A293FD8TTUAXH0497": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "HDBMR86TXYHXS0498": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "0PS32ENBJVDK80499": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "040KYWMS4KS8Y0500": {
+   "category": "personal_transfer",
+   "confidence": 0.65,
+   "reason": "Personal payment with vague note"
+  },
+  "C9XDH95H1EF0T0501": {
+   "category": "personal_transfer",
+   "confidence": 0.9,
+   "reason": "Dinner split with someone"
+  },
+  "68TX5ND37WCF00502": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "LFAKJX7TFKS0L0503": {
+   "category": "reimbursement",
+   "confidence": 0.9,
+   "reason": "Client paying back printing expenses"
+  },
+  "W7WVSEGXGE2630504": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "4AEU96056V7KB0505": {
+   "category": "personal_transfer",
+   "confidence": 0.65,
+   "reason": "Personal transfer with vague note"
+  },
+  "J2V4V1X540TNJ0506": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "W7TW2DW7TGNT70507": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "KEXB3HS2MJDKK0508": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "7TSPT9H9VNFUV0509": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "UPKNNPK581STU0510": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "05SD8GM25DB9E0511": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "A4ME95JBH4L5J0512": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "5SM08XMSE262W0513": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "HYALVSTGHGETJ0514": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "040S54EC832050515": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "R9KN1PRVLBH7V0516": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Freelance payment from bakery"
+  },
+  "R5V82NRMYDY1K0517": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "L89WNF4HF1PYD0518": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "FLGCHFN7DGT7N0519": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "N16LUT2PLMDWU0520": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "Y5AHP58B238CH0521": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "8HE219RBAYRGC0522": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "5HTA4UTX55MXE0523": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "7CWE586PBB98L0524": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "S8BVAK5T17NJK0525": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "PV9KJC5P11LNP0526": {
+   "category": "client_payment",
+   "confidence": 0.95,
+   "reason": "Freelance payment from agency"
+  },
+  "1WGUHPS10LGNH0527": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "X8KKVTBJ34SEY0528": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "BJKF3B7BU014G0529": {
+   "category": "personal_transfer",
+   "confidence": 0.95,
+   "reason": "Withdrawal to own bank account"
+  },
+  "8N5FE3GF8BG090530": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "R7BYUFJEY30FD0531": {
+   "category": "sale",
+   "confidence": 0.95,
+   "reason": "Fernleaf Prints order checkout"
+  },
+  "4HYMN8DWWS9W60532": {
+   "category": "personal_transfer",
+   "confidence": 0.8,
+   "reason": "Flatmate payment for tickets"
+  }
+ }
+}

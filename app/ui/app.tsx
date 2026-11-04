@@ -49,7 +49,7 @@ export function SetAsideApp(props: { initial: Snapshot; licenseKey?: string; aiK
         setSnap(await api.snapshot());
         if (res.remaining === 0 || res.classified === 0) {
           toast({
-            title: `${done} transactions classified`,
+            title: `${done} transaction${done === 1 ? '' : 's'} classified`,
             body: res.detail,
             tone: res.method === 'heuristic' ? 'warn' : 'ok',
           });
@@ -183,7 +183,16 @@ export function SetAsideApp(props: { initial: Snapshot; licenseKey?: string; aiK
       </header>
 
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col gap-4 px-4 pb-6 pt-4 md:px-6">
-        <Hero snap={snap} classifying={classifying} onClassify={classifyAll} onReview={() => setTab('review')} />
+        <Hero
+          snap={snap}
+          classifying={classifying}
+          onClassify={classifyAll}
+          onReview={() => setTab('review')}
+          onClearWhatIf={async () => {
+            await api.settings({ upliftBps: 0 });
+            await refresh();
+          }}
+        />
 
         {/* ── Tabs ─────────────────────────────────────────── */}
         <nav className="flex items-end gap-1 overflow-x-auto border-b border-sa-line" role="tablist">

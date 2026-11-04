@@ -4,7 +4,7 @@ import type { Snapshot } from '@/lib/service';
 import { Money, PotIcon } from './bits';
 import { formatDay, pct } from './format';
 
-export function Hero({ snap, classifying, onClassify, onReview }: { snap: Snapshot; classifying: { done: number; total: number } | null; onClassify: () => void; onReview: () => void }) {
+export function Hero({ snap, classifying, onClassify, onReview, onClearWhatIf }: { snap: Snapshot; classifying: { done: number; total: number } | null; onClassify: () => void; onReview: () => void; onClearWhatIf: () => void }) {
   const { summary, scenario, counts, preset, settings } = snap;
   const cur = preset.currency;
   const classified = counts.total - counts.unclassified;
@@ -43,6 +43,9 @@ export function Hero({ snap, classifying, onClassify, onReview }: { snap: Snapsh
               <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-sa-marigold/20 px-2.5 py-1 text-[12px] text-sa-marigold">
                 What-if {settings.upliftBps > 0 ? '+' : ''}
                 {settings.upliftBps / 100}% prices: <Money minor={scenario.setAside} currency={cur} className="font-semibold" />
+                <button onClick={onClearWhatIf} className="ml-1 rounded-full px-1 text-sa-marigold/80 hover:bg-sa-marigold/20 hover:text-sa-paper" aria-label="Clear what-if">
+                  ✕
+                </button>
               </div>
             )}
           </div>
