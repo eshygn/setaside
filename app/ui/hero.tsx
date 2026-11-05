@@ -67,6 +67,11 @@ export function Hero({ snap, classifying, onClassify, onReview, onClearWhatIf }:
               Full-year tax on this pace: <Money minor={summary.projectedYearTax} currency={cur} className="font-medium text-sa-ink-2" />.
             </>
           )}
+          {snap.status.paypal.liveBalance && snap.status.paypal.liveBalance.currency === cur && (
+            <span className="mt-1 block text-[11px]">
+              Sandbox account (live Balances API): <Money minor={snap.status.paypal.liveBalance.minor} currency={cur} />. The figure above is the demo history’s.
+            </span>
+          )}
         </div>
       </div>
 

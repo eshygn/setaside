@@ -44,7 +44,7 @@ The choices made while building SetAside, and why. When something was ambiguous,
 - **The sandbox app is shared with other experiments** (its ledger holds test payouts, holds and currency conversions). Live rows are filtered to what a seller would recognise as their own trading: payments received (`T00xx` with a positive amount), refunds (`T1107`) and chargebacks (`T1201`).
 - **Invoicing permission.** The sandbox app answers `403 NOT_AUTHORIZED` on `/v2/invoicing/invoices`, so the Invoicing feature isn't enabled on it. Live invoicing is fully implemented and is tried first; on refusal SetAside creates the invoice through the mock adapter and says so in the toast and the step log. Enable Invoicing on the app to make it live.
 - **Transaction Search lag.** Captures from the PayPal buttons are recorded at once from the Orders response, shaped like a Transaction Search item with the same id, and the next sync replaces them with PayPal's own copy.
-- **The provided payment `3KV701938H745371C`** is the buyer's side of the payment. `GET /v2/payments/captures/3KV701938H745371C` resolves to seller-side capture `1F91026345099340S`: £40.00, `PENDING` with reason `UNILATERAL`, payee `sb-3j7yv53688109@personal.example.com`. At run time Transaction Search's last refresh was 5.2 h older than the payment, so it wasn't listed yet. [`docs/sandbox-lifecycle.md`](docs/sandbox-lifecycle.md) is the full run.
+- **The provided payment `3KV701938H745371C`** is the buyer's side of the payment. `GET /v2/payments/captures/3KV701938H745371C` resolves to seller-side capture `1F91026345099340S`: £40.00, `PENDING` with reason `UNILATERAL`, payee `sb-3j7yv53688109@personal.example.com`. On 4 Nov it wasn't listed because Search hadn't refreshed yet. On 5 Nov, with Search refreshed 6.8 h *after* the payment, it still wasn't listed: it was paid to a different sandbox account, so this app's ledger will never show it. [`docs/sandbox-lifecycle.md`](docs/sandbox-lifecycle.md) is the full run.
 - **Live adapter checks.** A Balances call decides "live or mock" and is cached for 10 minutes. Transaction Search rejects future end dates, so live searches end at the real "now", whatever the demo clock says.
 
 ## Network and environment
@@ -57,3 +57,23 @@ The choices made while building SetAside, and why. When something was ambiguous,
 
 - **SQLite (`better-sqlite3`)** holds transactions, classifications, rules, invoices, the AI cache and the demo clock, and is seeded on first request. On Render's free plan the disk is ephemeral, which suits demo mode: a cold start is a fresh demo.
 - **Dashboard layouts** are saved in the browser's localStorage, as the boilerplate does it. They're a per-viewer preference, and that keeps the hosted demo from mixing up judges' layouts.
+
+## Final audit (5 November 2026)
+
+I checked from a clean clone (`npm ci`, then lint, typecheck, 47 tests and build all pass) and ran the whole demo story in a browser twice: once with no keys (mock), once with the sandbox and Gemini keys set (live). Changes and findings:
+
+**Fixed in this pass**
+- Live mode never called the Invoicing *list* endpoint, and threw away the Balances API's figure (it was only a health check). Live sync now lists sandbox invoices (reporting the 403 when the permission is missing) and shows the sandbox account's real balance under *Safe to spend*, labelled as such.
+- `package.json` claimed Node ≥ 20.9, but the AI SDK, `better-sqlite3` and Vitest need **Node 22.12+**. Fixed in `engines` and the README.
+- The lifecycle script misreported the provided payment as "not indexed yet" when it had actually gone to another account, and classified a row it had built itself without saying so. Both are now stated plainly.
+- The invoice toast showed PayPal's raw JSON error; it now says what happened in one sentence.
+- README, DEMO and SUBMISSION claimed more than the code backs up (the "PayPal year" is seeded history; safe-to-spend doesn't use the Balances API; the live capture is untested). They now say exactly what happens, and the README has a *What's live and what isn't* table.
+
+**Known limitations, not fixed**
+- **The demo year is fixture data in both modes.** A sandbox can't hold a back-dated year. Live mode merges real sandbox activity from the last 90 days; for this app that's 0 GBP rows and 2 USD rows, because its ledger holds another project's payouts, not payments to it.
+- **Live Invoicing is unverified end to end.** The code is implemented, but this sandbox app lacks the permission, so every live attempt returns 403 and falls back to mock.
+- **The live PayPal capture is unverified.** The buttons render and order creation works against the sandbox; capture needs the sandbox buyer's password in PayPal's popup, which this environment doesn't have.
+- **Live Gemini is nondeterministic,** so review counts vary run to run (21–27 seen). The demo script quotes mock-mode figures.
+- **Offline agent answers cover only the four suggested questions.** Anything else asked without Gemini gets an honest "can't reach Gemini" reply.
+- **Single-tenant hosting.** One SQLite database and demo clock for every visitor, with no auth on the API routes, so one visitor's Reset affects everyone. Acceptable for judging, not for production.
+- **No AG licence key here,** so the trial watermark shows.
