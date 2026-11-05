@@ -20,9 +20,11 @@ People who get paid through PayPal on the side (sellers, freelancers, creators) 
 npm install && npm run dev
 ```
 
-Open http://localhost:3000. Requires Node.js 20.9 or later. With no keys, the status chips read **PayPal: Mock** and **AI: Recorded Gemini**. The PayPal adapter serves fixtures shaped exactly like the documented API responses, and the AI replays answers recorded from real Gemini runs.
+Open http://localhost:3000. Requires **Node.js 22.12 or later** (the AI SDK, `better-sqlite3` and Vitest need it). With no keys, the status chips read **PayPal: Mock** and **AI: Recorded Gemini**. The PayPal adapter serves fixtures shaped exactly like the documented API responses, and the AI replays answers recorded from real Gemini runs.
 
 ### The two-minute story
+
+The counts below are from mock mode, where the replayed answers are fixed. Live Gemini files a few rows differently on each run (typically 21–27 to review), so the exact numbers change.
 
 1. **Classify 430 transactions with AI** (top right). The year sorts itself in a couple of seconds, and 22 rows land in *Needs review*.
 2. In **Review**, change Kofi Asante's 10 April payment from *Sale* to **Personal transfer**. SetAside learns the rule *"Payments from Kofi Asante are personal transfers"* and 18 similar rows flash as they update.
@@ -41,13 +43,30 @@ Open http://localhost:3000. Requires Node.js 20.9 or later. With no keys, the st
 
 | Where | PayPal API | How |
 |---|---|---|
-| Pulling the year | **Transaction Search** `GET /v1/reporting/transactions` | [`@paypal/paypal-server-sdk`](https://www.npmjs.com/package/@paypal/paypal-server-sdk) `TransactionSearchController.searchTransactions`. The API allows at most 31 days per query, so [`lib/paypal/sync.ts`](lib/paypal/sync.ts) splits the tax year into windows, pages each one (`page`/`total_pages`) and de-duplicates by `transaction_id`. Live sandbox activity merges with the seeded history. |
-| Safe to spend | **Balances** `GET /v1/reporting/balances` | `TransactionSearchController.searchBalances`, also used as the live-connection health check. |
+| Pulling the year | **Transaction Search** `GET /v1/reporting/transactions` | [`@paypal/paypal-server-sdk`](https://www.npmjs.com/package/@paypal/paypal-server-sdk) `TransactionSearchController.searchTransactions`. The API allows at most 31 days per query, so [`lib/paypal/sync.ts`](lib/paypal/sync.ts) splits the range into windows, pages each one (`page`/`total_pages`) and de-duplicates by `transaction_id`. **The demo year itself is seeded history** served by the mock adapter in the exact Transaction Search shape, because a sandbox can't hold a back-dated year. In live mode the last 90 days of real sandbox activity are searched and merged on top (see *What's live and what isn't*). |
+| Balance | **Balances** `GET /v1/reporting/balances` | `TransactionSearchController.searchBalances`. In live mode the sandbox account's real balance is shown under *Safe to spend*, and the call doubles as the health check. Safe to spend itself uses the demo history's running balance (PayPal's `ending_balance` on the last seeded transaction), so it matches the seeded year. |
 | Work paid without an invoice | **Invoicing v2** `POST /v2/invoicing/invoices`, `POST …/{id}/payments` | The server SDK has no Invoicing controller, so this is REST with a client-credentials token (the boilerplate's pattern): create the invoice, then record the PayPal payment against it so it reads as paid. An explicit state machine drives it ([`lib/invoice-flow.ts`](lib/invoice-flow.ts)). |
-| A client pays | **PayPal JS SDK buttons** + **Orders v2** | The buttons on the Invoices tab call our server, which creates and captures the order with `OrdersController`. Transaction Search can lag by up to three hours, so the capture is recorded straight away and reconciled when Search catches up. |
+| A client pays | **PayPal JS SDK buttons** + **Orders v2** | The buttons on the Invoices tab call our server, which creates and captures the order with `OrdersController`. Transaction Search can lag by up to three hours, so the capture is recorded straight away and reconciled when Search catches up. Live order creation is verified against the sandbox; completing a live payment needs a sandbox buyer login in PayPal's popup, so the live capture step hasn't been run end to end (the mock button runs the same flow). |
 | Following one payment | **Payments v2** `GET /v2/payments/captures/{id}` | [`scripts/sandbox-lifecycle.ts`](scripts/sandbox-lifecycle.ts) takes a real sandbox payment through capture lookup → Transaction Search → AI → Invoicing → tax. [`docs/sandbox-lifecycle.md`](docs/sandbox-lifecycle.md) is a real run for `3KV701938H745371C`. |
 
 Every external service sits behind an adapter with a **live** and a **mock** implementation that return the same, documented, snake_case shapes ([`lib/paypal/types.ts`](lib/paypal/types.ts)). Live is used when keys are set and PayPal answers; otherwise mock, and the chip says which. The mock enforces the same rules as the real API: ranges over 31 days are rejected, results are paged, and the last three hours are hidden.
+
+## What's live and what isn't
+
+Checked on 5 November 2026, with sandbox and Gemini keys set, by running the whole demo story in a browser and checking the API directly.
+
+| Part | Live mode | Notes |
+|---|---|---|
+| Transaction Search (paging, 31-day windows, lag) | ✅ live | This sandbox app's ledger holds no GBP payments *to* it (only another project's payouts and holds), so the UK preset merges **0** live rows; the US preset merges 2 real USD checkout sales. Everything older comes from the seeded fixtures. |
+| Balances | ✅ live | Shown beside safe-to-spend, which uses the demo history's balance. |
+| Invoicing (list, create, record payment) | ⚠️ falls back to mock | Fully implemented, but this sandbox app answers `403 NOT_AUTHORIZED` (the Invoicing permission isn't enabled). The UI and the step log say so. Invoices on file are seeded fixtures. |
+| PayPal JS SDK buttons + Orders v2 | ✅ buttons and order creation live · ⚠️ capture not run | Capturing needs a sandbox buyer to log in; the mock button runs the same capture-and-record flow. |
+| Payments v2 capture lookup | ✅ live | `scripts/sandbox-lifecycle.ts`; see [`docs/sandbox-lifecycle.md`](docs/sandbox-lifecycle.md). |
+| Gemini classifier | ✅ live | All 430 rows in about 20 s on `gemini-3.6-flash`. When a model answers 429/503 it moves to the next; when all fail it replays recordings (seen live during testing). |
+| AG Studio agent (build chart, edit chart, what-if, tax position) | ✅ live | 2–3 Gemini rounds per question, roughly 10–40 s on the free tier. In mock mode only the four suggested questions have recordings; any other question gets an honest "can't reach Gemini" reply. |
+| AG Grid / AG Studio licence | ⚠️ trial watermark | No licence key in this environment; it's applied automatically when set. |
+
+**Hosted demo caveat:** the app is single-tenant. Everyone who opens a deployment shares one SQLite database and one demo clock, and the API routes have no authentication, so one visitor's **Reset demo** resets it for everyone. `/api/agent` is rate-limited to 8 Gemini calls a minute but is otherwise open. That's fine for a judged demo; it isn't production-ready.
 
 ## How AI is used
 
@@ -79,7 +98,7 @@ Every external service sits behind an adapter with a **live** and a **mock** imp
 - **UK self-employment 2026/27**: personal allowance, 20/40/45% bands, Class 4 NI at 6% and 2%, the £1,000 trading allowance, and payment-on-account deadlines.
 - **US self-employment 2026 (single filer)**: SE tax at 15.3% on 92.35% of profit up to the wage base, 2026 federal brackets and standard deduction, half of SE tax deducted, and 1040-ES quarterly deadlines.
 
-Side profit is taxed on top of an editable salary, so your marginal rate applies. Money is **integer minor units everywhere** ([`lib/money.ts`](lib/money.ts)): PayPal's decimal strings are parsed digit by digit, rates are basis points, and rounding is explicit.
+Side profit is taxed on top of an editable salary, so your marginal rate applies. Money is **integer minor units** in storage and in all tax maths ([`lib/money.ts`](lib/money.ts)): PayPal's decimal strings are parsed digit by digit, rates are basis points, and rounding is explicit. AG Studio charts need plain numbers, so the dashboard's visible money fields are major units for display; the tax widgets read hidden integer fields instead.
 
 ## Live sandbox setup
 
@@ -114,6 +133,8 @@ npm run record-ai    # re-record Gemini classifications for the scenario (uses y
 ```
 
 ## How it's built
+
+The five files that matter most, and the decisions behind them, are in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ```
 lib/money.ts              integer minor-unit money: parse, apply basis points, format

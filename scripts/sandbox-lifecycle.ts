@@ -66,12 +66,17 @@ async function main() {
     const i = match.transaction_info;
     log(`- Found **${i.transaction_id}**: ${i.transaction_event_code}, ${i.transaction_amount?.value} ${i.transaction_amount?.currency_code}, status ${i.transaction_status}.`);
   } else {
-    const lagHours = found.lastRefreshed ? ((created - Date.parse(found.lastRefreshed)) / 3_600_000).toFixed(1) : '?';
-    log(`- Not in Transaction Search yet. The payment is ${lagHours} h newer than PayPal's last refresh (Transaction Search can lag up to 3 h), or it was paid to another account (see the payee above). SetAside handles this by recording captures from the Orders/Payments response immediately and reconciling when Search catches up.`);
+    const refreshed = found.lastRefreshed ? Date.parse(found.lastRefreshed) : undefined;
+    if (refreshed !== undefined && refreshed < created) {
+      log(`- Not in Transaction Search yet: the payment is ${((created - refreshed) / 3_600_000).toFixed(1)} h newer than PayPal's last refresh, and Search can lag up to 3 h. SetAside covers this by recording captures from the Orders response immediately.`);
+    } else {
+      log(`- **Not in this account's ledger**, even though PayPal refreshed it ${refreshed !== undefined ? (((refreshed - created) / 3_600_000).toFixed(1) + ' h') : ''} after the payment. It was paid to a different sandbox account (the payee above), so this app's Transaction Search will never list it.`);
+    }
   }
 
   // 3. Classify ----------------------------------------------------------------------------------
   step(3, 'AI: classify it');
+  if (!match) log(`- Not in Search, so the classifier gets a row built from the capture response (amount, date, a checkout event code). Treat this step as a check of the classifier, not of real ledger data.`);
   const amountMinor = parseMinor(match?.transaction_info.transaction_amount?.value ?? capture?.amount.value ?? '0');
   const currency = match?.transaction_info.transaction_amount?.currency_code ?? capture?.amount.currency_code ?? 'GBP';
   const input = {
@@ -114,7 +119,7 @@ async function main() {
   }
 
   // 5. Tax effect ------------------------------------------------------------------------------------
-  step(5, 'Tax: what it adds to the set-aside');
+  step(5, match ? 'Tax: what it adds to the set-aside' : 'Tax: what it would add to the set-aside, if it were Jo’s');
   process.env.AI_OFFLINE = '1'; // the demo year uses the recorded Gemini answers, not more quota
   await service.resetDemo();
   await service.classifyNext(1000);

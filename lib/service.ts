@@ -90,7 +90,7 @@ export type SyncReport = {
   sandboxRows: number;
   calls: number;
   windows: number;
-  paypal: { mode: 'live' | 'mock'; detail: string; lastRefreshed?: string };
+  paypal: { mode: 'live' | 'mock'; detail: string; lastRefreshed?: string; liveBalance?: { minor: number; currency: string } };
 };
 
 /** Pull the tax year to the demo clock: seeded history from the mock, real activity from the sandbox. */
@@ -129,7 +129,26 @@ export async function syncTransactions(): Promise<SyncReport> {
       );
       insertAll(keep, 'sandbox');
       sandboxRows = keep.length;
-      paypal = { mode: 'live', detail: `Sandbox connected: ${keep.length} live transactions merged`, lastRefreshed: res.lastRefreshed };
+      const notes = [`${keep.length} live transactions merged`];
+      // Balances API: the sandbox account's own figure. Safe-to-spend uses the demo history's
+      // balance (the sandbox can't hold a back-dated year), so this is shown beside it, not mixed in.
+      let liveBalance: { minor: number; currency: string } | undefined;
+      try {
+        const b = (await withTimeout(live.getBalances(), 8000)).balances.find((x) => x.currency === preset.currency);
+        if (b) liveBalance = { minor: parseMinor((b.available_balance ?? b.total_balance).value), currency: b.currency };
+      } catch {
+        notes.push('Balances call failed');
+      }
+      // Invoicing: list the sandbox account's invoices. This app may lack the Invoicing permission.
+      try {
+        const invoices = await withTimeout(live.listInvoices(), 15_000);
+        const store = db.prepare('INSERT OR REPLACE INTO invoice (id, number, status, recipient, amount_minor, currency, tx_id, invoice_date, origin, raw) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        for (const inv of invoices) if (inv.detail.currency_code === preset.currency) storeInvoice(store, inv, null, 'sandbox');
+        notes.push(`${invoices.length} sandbox invoices listed`);
+      } catch (error) {
+        notes.push(`Invoicing unavailable (${error instanceof Error && /403/.test(error.message) ? '403: app lacks the Invoicing permission' : 'error'})`);
+      }
+      paypal = { mode: 'live', detail: `Sandbox connected: ${notes.join('; ')}`, lastRefreshed: res.lastRefreshed, liveBalance };
     } catch (error) {
       paypal = { mode: 'mock', detail: `Sandbox search failed, mock only (${error instanceof Error ? error.message.slice(0, 80) : 'error'})` };
     }
@@ -297,7 +316,7 @@ export type Snapshot = {
   summary: SetAsideSummary;
   scenario?: SetAsideSummary;
   quarters: ReturnType<typeof quarterlyAccrual>;
-  status: { paypal: { mode: 'live' | 'mock'; detail: string; lastRefreshed?: string }; ai: AiStatus };
+  status: { paypal: SyncReport['paypal']; ai: AiStatus };
   counts: { total: number; unclassified: number; needsReview: number; corrected: number; ruleMatched: number };
 };
 
@@ -495,7 +514,10 @@ export async function raiseInvoice(txId: string): Promise<RaiseInvoiceReport> {
       storeInvoice(insert, res.invoice, row.id, 'sandbox');
       return { invoice: listInvoices().find((i) => i.id === res.invoice.id)!, steps: res.steps, mode: 'live', state };
     } catch (error) {
-      note = `Live Invoicing refused (${error instanceof Error ? error.message.slice(0, 120) : 'error'}); created in mock mode instead.`;
+      const msg = error instanceof Error ? error.message : String(error);
+      note = /403/.test(msg)
+        ? 'PayPal refused live Invoicing (403 NOT_AUTHORIZED: this sandbox app lacks the Invoicing permission), so the invoice was created by the mock adapter instead.'
+        : `Live Invoicing failed (${msg.slice(0, 100)}), so the invoice was created by the mock adapter instead.`;
     }
   }
   const res = await mockAdapter(row.currency, () => clockNow(s.clock)).createPaidInvoice(draft);
