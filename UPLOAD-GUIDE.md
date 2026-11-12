@@ -82,7 +82,7 @@ PayPal, PayPal AI Hackathon, Devpost, Gemini, AI agent, AG Grid, AG Studio, side
 SetAside
 ```
 
-**Elevator pitch** (Devpost allows 200 characters; this is 172):
+**Elevator pitch** (Devpost allows 200 characters; this is 171):
 ```
 SetAside reads your PayPal activity, uses Gemini to sort business from personal, and tells side earners how much tax to put aside, what's safe to spend, and when it's due.
 ```
