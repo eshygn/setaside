@@ -51,7 +51,6 @@ The choices made while building SetAside, and why. When something was ambiguous,
 
 - Every host the app needs answered from the build environment: `api-m.sandbox.paypal.com`, `www.paypal.com` (JS SDK), `generativelanguage.googleapis.com`, `registry.npmjs.org` and Google Fonts. Nothing had to be switched to a mock because of the allowlist.
 - `AG_GRID_LICENSE_KEY` was present but empty, so AG Grid and AG Studio run with the trial watermark. The key is applied to both whenever it is set.
-- Bryntum and Z3 are mentioned in the general brief, but SetAside doesn't need them, so they aren't used.
 
 ## Storage and deployment
 

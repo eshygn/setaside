@@ -43,3 +43,7 @@ next-env.d.ts
 
 # SetAside local database
 /data/
+
+# Instructions for AI coding tools; next dev regenerates these locally
+/AGENTS.md
+/CLAUDE.md

@@ -1,7 +1,5 @@
 # SetAside: demo video script
 
-> The recorded take and the ElevenLabs voice-over text are in [VOICEOVER.md](VOICEOVER.md). This file is the longer shot list for re-recording by hand.
-
 **Target length 2:45** (hard limit 2:50). Record at **1440×900** in Chrome, browser zoom 100%, macOS/Windows UI hidden. About 390 spoken words at a calm pace (~140 wpm).
 
 ## Before recording
