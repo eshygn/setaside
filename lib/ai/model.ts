@@ -10,8 +10,12 @@ import { APICallError, RetryError } from 'ai';
 import type { LanguageModel } from 'ai';
 import { kvGet, kvSet } from '../db';
 
-/** Newest free-tier Flash models first (checked against this key's quota on 4 Nov 2026). */
-export const DEFAULT_MODELS = ['gemini-3.6-flash', 'gemini-3-flash-preview', 'gemini-3.5-flash-lite', 'gemini-flash-lite-latest'];
+/**
+ * The newest Flash model first, then gemini-2.5-flash. When both fail (overloaded, rate-limited or
+ * unavailable), callers replay recorded Gemini answers. The status chip names whichever answered.
+ * Set AI_MODEL to put other models first.
+ */
+export const DEFAULT_MODELS = ['gemini-3.8-flash', 'gemini-2.5-flash'];
 
 export function modelIds(): string[] {
   const configured = (process.env.AI_MODEL ?? '').split(',').map((m) => m.trim()).filter(Boolean);

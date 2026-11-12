@@ -43,7 +43,7 @@ The counts below are from mock mode, where the replayed answers are fixed. Live 
 
 | Where | PayPal API | How |
 |---|---|---|
-| Pulling the year | **Transaction Search** `GET /v1/reporting/transactions` | [`@paypal/paypal-server-sdk`](https://www.npmjs.com/package/@paypal/paypal-server-sdk) `TransactionSearchController.searchTransactions`. The API allows at most 31 days per query, so [`lib/paypal/sync.ts`](lib/paypal/sync.ts) splits the range into windows, pages each one (`page`/`total_pages`) and de-duplicates by `transaction_id`. **The demo year itself is seeded history** served by the mock adapter in the exact Transaction Search shape, because a sandbox can't hold a back-dated year. In live mode the last 90 days of real sandbox activity are searched and merged on top (see *What's live and what isn't*). |
+| Pulling the year | **Transaction Search** `GET /v1/reporting/transactions` | [`@paypal/paypal-server-sdk`](https://www.npmjs.com/package/@paypal/paypal-server-sdk) `TransactionSearchController.searchTransactions`. The API allows at most 31 days per query, so [`lib/paypal/sync.ts`](lib/paypal/sync.ts) splits the range into windows, pages each one (`page`/`total_pages`) and de-duplicates by `transaction_id`. **The demo year itself is seeded history** served by the mock adapter in the exact Transaction Search shape, because a sandbox can't hold a back-dated year. In live mode the last 90 days of real sandbox activity are searched and merged on top (see *Real vs simulated*). |
 | Balance | **Balances** `GET /v1/reporting/balances` | `TransactionSearchController.searchBalances`. In live mode the sandbox account's real balance is shown under *Safe to spend*, and the call doubles as the health check. Safe to spend itself uses the demo history's running balance (PayPal's `ending_balance` on the last seeded transaction), so it matches the seeded year. |
 | Work paid without an invoice | **Invoicing v2** `POST /v2/invoicing/invoices`, `POST …/{id}/payments` | The server SDK has no Invoicing controller, so this is REST with a client-credentials token (the boilerplate's pattern): create the invoice, then record the PayPal payment against it so it reads as paid. An explicit state machine drives it ([`lib/invoice-flow.ts`](lib/invoice-flow.ts)). |
 | A client pays | **PayPal JS SDK buttons** + **Orders v2** | The buttons on the Invoices tab call our server, which creates and captures the order with `OrdersController`. Transaction Search can lag by up to three hours, so the capture is recorded straight away and reconciled when Search catches up. Live order creation is verified against the sandbox; completing a live payment needs a sandbox buyer login in PayPal's popup, so the live capture step hasn't been run end to end (the mock button runs the same flow). |
@@ -51,20 +51,25 @@ The counts below are from mock mode, where the replayed answers are fixed. Live 
 
 Every external service sits behind an adapter with a **live** and a **mock** implementation that return the same, documented, snake_case shapes ([`lib/paypal/types.ts`](lib/paypal/types.ts)). Live is used when keys are set and PayPal answers; otherwise mock, and the chip says which. The mock enforces the same rules as the real API: ranges over 31 days are rejected, results are paged, and the last three hours are hidden.
 
-## What's live and what isn't
+## Real vs simulated
 
-Checked on 5 November 2026, with sandbox and Gemini keys set, by running the whole demo story in a browser and checking the API directly.
+**Simulated in every mode:** Jo Mensah, her business, her customers and her year of transactions are fictional. The year is seeded data served in PayPal Transaction Search's exact response format, because a sandbox account can't hold a back-dated year. Everything below is about which *calls* are real.
 
-| Part | Live mode | Notes |
+**With the current sandbox app and Gemini key (checked 12 November 2026):**
+
+| Part | Status | What actually happens |
 |---|---|---|
-| Transaction Search (paging, 31-day windows, lag) | ✅ live | This sandbox app's ledger holds no GBP payments *to* it (only another project's payouts and holds), so the UK preset merges **0** live rows; the US preset merges 2 real USD checkout sales. Everything older comes from the seeded fixtures. |
-| Balances | ✅ live | Shown beside safe-to-spend, which uses the demo history's balance. |
-| Invoicing (list, create, record payment) | ⚠️ falls back to mock | Fully implemented, but this sandbox app answers `403 NOT_AUTHORIZED` (the Invoicing permission isn't enabled). The UI and the step log say so. Invoices on file are seeded fixtures. |
-| PayPal JS SDK buttons + Orders v2 | ✅ buttons and order creation live · ⚠️ capture not run | Capturing needs a sandbox buyer to log in; the mock button runs the same capture-and-record flow. |
-| Payments v2 capture lookup | ✅ live | `scripts/sandbox-lifecycle.ts`; see [`docs/sandbox-lifecycle.md`](docs/sandbox-lifecycle.md). |
-| Gemini classifier | ✅ live | All 430 rows in about 20 s on `gemini-3.6-flash`. When a model answers 429/503 it moves to the next; when all fail it replays recordings (seen live during testing). |
-| AG Studio agent (build chart, edit chart, what-if, tax position) | ✅ live | 2–3 Gemini rounds per question, roughly 10–40 s on the free tier. In mock mode only the four suggested questions have recordings; any other question gets an honest "can't reach Gemini" reply. |
-| AG Grid / AG Studio licence | ⚠️ trial watermark | No licence key in this environment; it's applied automatically when set. |
+| PayPal sign-in (OAuth) | ✅ real | The keys are accepted by the PayPal sandbox. |
+| PayPal JS SDK buttons + Orders v2 | ✅ real (orders) · ⚠️ capture not run | Real sandbox orders are created. Completing a payment needs a sandbox buyer to log in in PayPal's popup, which hasn't been done end to end. |
+| Transaction Search | ⚠️ simulated | The app answers 403: the **Transaction search** permission isn't enabled, so the demo history is all you see. The paging code was verified live on 5 Nov with an earlier app. |
+| Balances | ⚠️ simulated | 403, same permission. Safe to spend uses the demo history's balance. |
+| Invoicing | ⚠️ simulated | 403: the **Invoicing** permission isn't enabled. Invoices are created by the mock adapter, and the app says so. Never verified live. |
+| Gemini classifier and agent | ⚠️ recorded | The order is `gemini-3.8-flash` → `gemini-2.5-flash` → recorded answers. On 12 Nov, 3.8-flash was overloaded or over quota, and Google has retired 2.5-flash for new keys, so the app replayed answers recorded from real Gemini runs. The chip says "Recorded Gemini". Live classification and the live agent *were* verified on 5 Nov with an earlier key (`gemini-3.6-flash`). |
+| Rules, tax maths, AG Grid, AG Studio widgets | ✅ real | All run in the app itself, whatever mode PayPal and Gemini are in. |
+
+**With no keys at all**, everything PayPal- and Gemini-shaped is mock or recorded, and the whole demo story still runs. The status chips always show which mode each part is in.
+
+To make Transaction Search, Balances and Invoicing real, follow *Live sandbox setup* below.
 
 **Hosted demo caveat:** the app is single-tenant. Everyone who opens a deployment shares one SQLite database and one demo clock, and the API routes have no authentication, so one visitor's **Reset demo** resets it for everyone. `/api/agent` is rate-limited to 8 Gemini calls a minute but is otherwise open. That's fine for a judged demo; it isn't production-ready.
 
@@ -80,7 +85,7 @@ Checked on 5 November 2026, with sandbox and Gemini keys set, by running the who
 - `get_tax_position` returns the exact figures from the tax engine, so the model never does tax maths
 - `query_totals` and `add_setaside_widget`
 
-**Free-tier discipline.** Calls go through a local rate limit, a SQLite cache, and a chain of free-tier Flash models that moves to the next model on a 429 or 503 ([`lib/ai/model.ts`](lib/ai/model.ts)). If all of them fail, SetAside replays responses recorded from real Gemini runs ([`fixtures/ai`](fixtures/ai)), and the status chip and the chat say so. A deterministic classifier is the last resort.
+**Free-tier discipline.** Calls go through a local rate limit and a SQLite cache, then try `gemini-3.8-flash` (the newest Flash), then `gemini-2.5-flash`, moving on after a rate limit, an overload, a retired model or a 45-second timeout ([`lib/ai/model.ts`](lib/ai/model.ts)). If all of them fail, SetAside replays responses recorded from real Gemini runs ([`fixtures/ai`](fixtures/ai)), and the status chip and the chat say so. A deterministic classifier is the last resort.
 
 ## AG Grid and AG Studio
 

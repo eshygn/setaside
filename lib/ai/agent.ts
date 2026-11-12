@@ -178,7 +178,7 @@ export async function agentTurn(req: AgentTurnRequest): Promise<AgentTurn> {
         tools,
         toolChoice,
         maxRetries: 0,
-        abortSignal: AbortSignal.timeout(Number(process.env.AI_TIMEOUT_MS ?? 75_000)),
+        abortSignal: AbortSignal.timeout(Number(process.env.AI_TIMEOUT_MS ?? 45_000)),
         // Minimal thinking keeps free-tier rounds quick; the tools carry the hard parts.
         providerOptions: { google: { thinkingConfig: { thinkingLevel: 'minimal' } } },
       }),

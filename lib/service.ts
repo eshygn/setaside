@@ -9,7 +9,7 @@ import { isCategory, type Category } from './categories';
 import { getDb, kvGet, kvSet, wipe } from './db';
 import { initialInvoiceState, invoiceTransition, type InvoiceFlowState } from './invoice-flow';
 import { parseMinor, toDecimalString, type Currency } from './money';
-import { liveAdapter, liveHealth, mockAdapter, withTimeout } from './paypal';
+import { describeError, liveAdapter, liveHealth, mockAdapter, withTimeout } from './paypal';
 import { fetchRange } from './paypal/sync';
 import type { PayPalInvoice, PayPalTransactionDetail } from './paypal/types';
 import { transition, isAutomatable, type ReviewState } from './review';
@@ -146,11 +146,11 @@ export async function syncTransactions(): Promise<SyncReport> {
         for (const inv of invoices) if (inv.detail.currency_code === preset.currency) storeInvoice(store, inv, null, 'sandbox');
         notes.push(`${invoices.length} sandbox invoices listed`);
       } catch (error) {
-        notes.push(`Invoicing unavailable (${error instanceof Error && /403/.test(error.message) ? '403: app lacks the Invoicing permission' : 'error'})`);
+        notes.push(`Invoicing unavailable (${describeError(error)})`);
       }
       paypal = { mode: 'live', detail: `Sandbox connected: ${notes.join('; ')}`, lastRefreshed: res.lastRefreshed, liveBalance };
     } catch (error) {
-      paypal = { mode: 'mock', detail: `Sandbox search failed, mock only (${error instanceof Error ? error.message.slice(0, 80) : 'error'})` };
+      paypal = { mode: 'mock', detail: `Sandbox keys work, but Transaction Search failed (${describeError(error)}), so this is demo history only. Checkout still uses the sandbox.` };
     }
   } else {
     paypal = { mode: 'mock', detail: health.detail };

@@ -134,6 +134,11 @@ export class LivePayPal implements PayPalAdapter {
 
   // --- REST for the endpoints the SDK doesn't cover -------------------------------------
 
+  /** Throws unless PayPal accepts the client id and secret. */
+  async checkAuth() {
+    await this.accessToken();
+  }
+
   private async accessToken() {
     if (this.token && Date.now() < this.token.expiresAt) return this.token.value;
     const res = await fetch(`${BASE_URL}/v1/oauth2/token`, {

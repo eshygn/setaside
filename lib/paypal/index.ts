@@ -18,18 +18,33 @@ export function liveAdapter(): LivePayPal | undefined {
 
 export const mockAdapter = (currency: Currency, now: () => Date): PayPalAdapter => new MockPayPal(currency, now);
 
-/** Whether the live sandbox is usable right now. Checked with a Balances call, cached 10 minutes. */
+/**
+ * Whether the sandbox credentials work: an OAuth token request, cached 10 minutes. Each feature
+ * (Transaction Search, Balances, Invoicing, Orders) then succeeds or falls back to mock on its
+ * own, because a sandbox app can have some permissions and not others.
+ */
 export async function liveHealth(): Promise<{ ok: boolean; detail: string }> {
   const adapter = liveAdapter();
   if (!adapter) return { ok: false, detail: 'No PAYPAL_CLIENT_ID / PAYPAL_CLIENT_SECRET: mock PayPal' };
   if (health && Date.now() - health.checkedAt < 10 * 60_000) return health;
   try {
-    await withTimeout(adapter.getBalances(), 8000);
-    health = { ok: true, detail: 'PayPal sandbox connected', checkedAt: Date.now() };
+    await withTimeout(adapter.checkAuth(), 8000);
+    health = { ok: true, detail: 'PayPal sandbox keys accepted', checkedAt: Date.now() };
   } catch (error) {
-    health = { ok: false, detail: `Sandbox unreachable, using mock (${error instanceof Error ? error.message.slice(0, 80) : 'error'})`, checkedAt: Date.now() };
+    health = { ok: false, detail: `Sandbox keys rejected or unreachable, using mock (${describeError(error)})`, checkedAt: Date.now() };
   }
   return health;
+}
+
+/** A short, readable reason for a PayPal failure (the SDK's errors can have an empty message). */
+export function describeError(error: unknown): string {
+  const e = error as { statusCode?: number; status?: number; message?: string; body?: unknown };
+  const status = e?.statusCode ?? e?.status;
+  if (status === 403) return '403: this sandbox app lacks the permission';
+  if (status === 401) return '401: keys rejected';
+  const msg = error instanceof Error ? error.message : String(error);
+  if (/403/.test(msg)) return '403: this sandbox app lacks the permission';
+  return (msg || (status ? `HTTP ${status}` : 'error')).slice(0, 80);
 }
 
 export function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
