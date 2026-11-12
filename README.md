@@ -64,7 +64,7 @@ Every external service sits behind an adapter with a **live** and a **mock** imp
 | Transaction Search | ⚠️ simulated | The app answers 403: the **Transaction search** permission isn't enabled, so the demo history is all you see. The paging code was verified live on 5 Nov with an earlier app. |
 | Balances | ⚠️ simulated | 403, same permission. Safe to spend uses the demo history's balance. |
 | Invoicing | ⚠️ simulated | 403: the **Invoicing** permission isn't enabled. Invoices are created by the mock adapter, and the app says so. Never verified live. |
-| Gemini classifier and agent | ⚠️ recorded | The order is `gemini-3.8-flash` → `gemini-2.5-flash` → recorded answers. On 12 Nov, 3.8-flash was overloaded or over quota, and Google has retired 2.5-flash for new keys, so the app replayed answers recorded from real Gemini runs. The chip says "Recorded Gemini". Live classification and the live agent *were* verified on 5 Nov with an earlier key (`gemini-3.6-flash`). |
+| Gemini classifier and agent | ⚠️ recorded | The order is `gemini-3.8-flash` → `gemini-3.6-flash` → `gemini-2.5-flash` → recorded answers. On 12 Nov, 3.8-flash was overloaded or over quota, and Google has retired 2.5-flash for new keys, so the app replayed answers recorded from real Gemini runs. The chip says "Recorded Gemini". Live classification and the live agent *were* verified on 5 Nov with an earlier key (`gemini-3.6-flash`). |
 | Rules, tax maths, AG Grid, AG Studio widgets | ✅ real | All run in the app itself, whatever mode PayPal and Gemini are in. |
 
 **With no keys at all**, everything PayPal- and Gemini-shaped is mock or recorded, and the whole demo story still runs. The status chips always show which mode each part is in.
@@ -85,7 +85,7 @@ To make Transaction Search, Balances and Invoicing real, follow *Live sandbox se
 - `get_tax_position` returns the exact figures from the tax engine, so the model never does tax maths
 - `query_totals` and `add_setaside_widget`
 
-**Free-tier discipline.** Calls go through a local rate limit and a SQLite cache, then try `gemini-3.8-flash` (the newest Flash), then `gemini-2.5-flash`, moving on after a rate limit, an overload, a retired model or a 45-second timeout ([`lib/ai/model.ts`](lib/ai/model.ts)). If all of them fail, SetAside replays responses recorded from real Gemini runs ([`fixtures/ai`](fixtures/ai)), and the status chip and the chat say so. A deterministic classifier is the last resort.
+**Free-tier discipline.** Calls go through a local rate limit and a SQLite cache, then try `gemini-3.8-flash` (the newest Flash), then `gemini-3.6-flash`, then `gemini-2.5-flash`, moving on after a rate limit, an overload, a retired model or a 45-second timeout ([`lib/ai/model.ts`](lib/ai/model.ts)). If all of them fail, SetAside replays responses recorded from real Gemini runs ([`fixtures/ai`](fixtures/ai)), and the status chip and the chat say so. A deterministic classifier is the last resort.
 
 ## AG Grid and AG Studio
 

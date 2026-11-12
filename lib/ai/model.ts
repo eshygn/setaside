@@ -11,11 +11,12 @@ import type { LanguageModel } from 'ai';
 import { kvGet, kvSet } from '../db';
 
 /**
- * The newest Flash model first, then gemini-2.5-flash. When both fail (overloaded, rate-limited or
+ * The newest Flash model first, then gemini-3.6-flash (it answered when 3.8 was overloaded), then
+ * gemini-2.5-flash. When all fail (overloaded, rate-limited or
  * unavailable), callers replay recorded Gemini answers. The status chip names whichever answered.
  * Set AI_MODEL to put other models first.
  */
-export const DEFAULT_MODELS = ['gemini-3.8-flash', 'gemini-2.5-flash'];
+export const DEFAULT_MODELS = ['gemini-3.8-flash', 'gemini-3.6-flash', 'gemini-2.5-flash'];
 
 export function modelIds(): string[] {
   const configured = (process.env.AI_MODEL ?? '').split(',').map((m) => m.trim()).filter(Boolean);
